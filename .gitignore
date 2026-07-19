@@ -18,6 +18,8 @@ auth.json
 # Runtime/private store data.
 admin/private/*
 !admin/private/.htaccess
+private/*
+!private/.htaccess
 
 # Ephemeral certificate validation files.
 .well-known/acme-challenge/*

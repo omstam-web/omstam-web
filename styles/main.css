@@ -254,8 +254,36 @@ section { padding: 96px 0; }
   background-position: center;
 }
 .course-card h3 { padding: 20px 20px 6px; font-size: 1.15rem; }
-.course-card p { padding: 0 20px 22px; color: #4a4030; font-size: 0.94rem; }
+.course-card p { padding: 0 20px; color: #4a4030; font-size: 0.94rem; margin: 0 0 14px; }
+.course-stats {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.course-stats li {
+  background: var(--parchment-2);
+  border: 1px solid rgba(182, 144, 63, 0.3);
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.course-more {
+  display: block;
+  padding: 0 20px 22px;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.course-more:hover { color: var(--burgundy); }
 .courses-cta { text-align: center; margin-top: 40px; }
+.courses-all-link { text-align: center; margin-top: 18px; }
+.courses-all-link a { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.courses-all-link a:hover { color: var(--burgundy); }
 
 /* ---------- About ---------- */
 .about { background: var(--navy); }
@@ -350,6 +378,10 @@ section { padding: 96px 0; }
 .form-row input:focus, .form-row textarea:focus { outline: 2px solid var(--gold); }
 .form-submit { border: none; cursor: pointer; width: 100%; }
 .form-note { font-size: 0.8rem; color: #6a6050; margin-top: 10px; }
+.form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { font-size: 0.9rem; font-weight: 600; margin: 10px 0 0; min-height: 1.2em; }
+.form-status.ok { color: #1f5f3a; }
+.form-status.error { color: var(--burgundy); }
 .contact-direct {
   display: flex;
   flex-direction: column;

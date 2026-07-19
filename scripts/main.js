@@ -23,11 +23,31 @@ const observer = new IntersectionObserver((entries) => {
 revealEls.forEach(el => observer.observe(el));
 
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
+const formStatus = document.getElementById('formStatus');
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const text = `שלום, שמי ${name}, טלפון ${phone}. ${message}`.trim();
-  window.open(`https://wa.me/972534177677?text=${encodeURIComponent(text)}`, '_blank');
+  const submitBtn = contactForm.querySelector('.form-submit');
+  submitBtn.disabled = true;
+  formStatus.textContent = 'שולח...';
+  formStatus.className = 'form-status';
+
+  try {
+    const res = await fetch('contact-handler.php', {
+      method: 'POST',
+      body: new FormData(contactForm),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      formStatus.textContent = 'הפנייה נשלחה בהצלחה! נחזור אליך בהקדם.';
+      formStatus.classList.add('ok');
+      contactForm.reset();
+    } else {
+      throw new Error(data.error || 'unknown');
+    }
+  } catch (err) {
+    formStatus.textContent = 'לא הצלחנו לשלוח את הטופס. אפשר לשלוח בוואטסאפ במקום.';
+    formStatus.classList.add('error');
+  } finally {
+    submitBtn.disabled = false;
+  }
 });

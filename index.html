@@ -152,19 +152,36 @@
       <article class="course-card reveal">
         <div class="course-img" style="background-image:url('assets/img/course/aula-estudio.jpg')"></div>
         <h3>קורס כתיבת סת"ם</h3>
-        <p>הקורס המרכזי של המכון — מהיסודות ועד לכתיבת מזוזה, תפילין וספר תורה ברמה גבוהה.</p>
+        <p>הקורס המרכזי של המכון — מהיסודות ועד לכתיבת מזוזה, תפילין וספר תורה ברמה גבוהה. קבוצות בוטיק, ליווי אישי צמוד מהרב יוחאי אוחיון עד לרמה הנדרשת.</p>
+        <ul class="course-stats">
+          <li>12 מפגשים</li>
+          <li>כ-5 תלמידים בקבוצה</li>
+          <li>2 שעות למפגש</li>
+          <li>לימוד הלכה לכל השיטות</li>
+          <li>תעודה בסיום</li>
+        </ul>
+        <a href="דף-הקורסים/קורס-סופר/index.html" class="course-more">לפרטי הקורס ←</a>
       </article>
       <article class="course-card reveal">
         <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-1.jpg')"></div>
         <h3>קורס סופרי סת"ם</h3>
-        <p>המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת"ם מוסמך ומוכר.</p>
+        <p>המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת"ם מוסמך ומוכר. פרטים מותאמים אישית בשיחה עם הרב יוחאי.</p>
+        <a href="דף-הקורסים/קורס-סופרי-סת״ם/index.html" class="course-more">לפרטי הקורס ←</a>
       </article>
       <article class="course-card reveal">
         <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-2.jpg')"></div>
         <h3>קורס מכניסי פרשיות ושיפוץ תפילין</h3>
-        <p>לימוד מקצועי של הכנסת פרשיות ושיפוץ בתי תפילין, בהתאם להלכה.</p>
+        <p>לימוד מקצועי של הכנסת פרשיות ושיפוץ בתי תפילין, בהתאם להלכה — לימוד פרטי, לא בקבוצה.</p>
+        <ul class="course-stats">
+          <li>לימוד פרטי (לא בקבוצה)</li>
+          <li>שעה למפגש</li>
+          <li>לימוד הלכה לכל השיטות</li>
+          <li>תעודה בסיום</li>
+        </ul>
+        <a href="דף-הקורסים/קורס-מכניסי-פרשיות/index.html" class="course-more">לפרטי הקורס ←</a>
       </article>
     </div>
+    <p class="courses-all-link reveal"><a href="דף-הקורסים/index.html">לכל הקורסים וההרצאות של המכון ←</a></p>
     <div class="courses-cta reveal">
       <a href="#contact" class="btn btn-gold">לפרטים והרשמה</a>
     </div>
@@ -243,8 +260,13 @@
           <label for="message">קצת עליך, ולמה מעניין אותך הקורס</label>
           <textarea id="message" name="message" rows="4"></textarea>
         </div>
+        <div class="form-row form-honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <button type="submit" class="btn btn-gold form-submit">שליחה</button>
-        <p class="form-note">הטופס פונה כרגע ישירות לוואטסאפ / מייל של המכון.</p>
+        <p class="form-status" id="formStatus" role="status"></p>
+        <p class="form-note">הפנייה תישלח ישירות למייל של המכון. אפשר גם ליצור קשר ישירות בוואטסאפ.</p>
       </form>
       <div class="contact-direct">
         <a href="https://wa.me/972534177677" target="_blank" rel="noopener" class="btn btn-outline">וואטסאפ: 053-417-7677</a>
