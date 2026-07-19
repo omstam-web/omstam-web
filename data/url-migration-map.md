@@ -32,7 +32,7 @@ Estas 8 URLs existían en el sitemap original pero **no tienen equivalente en el
 
 | URL vieja | Por qué no se migró | Recomendación |
 |---|---|---|
-| `/חנות/` | Catálogo WooCommerce — fuera de alcance de esta reconstrucción | Redirect 301 a `/` o a `/דף-הקורסים/`, salvo que se decida migrar el catálogo de productos aparte |
+| `/חנות/` | Catálogo WooCommerce — confirmado con el cliente (2026-07-19) que no hace falta tienda online | Redirect 301 a `/` |
 | `/חנות/checkout/` | Checkout de WooCommerce, no aplica sin carrito | Redirect 301 a `/` |
 | `/חנות/עגלה/` | Carrito de WooCommerce | Redirect 301 a `/` |
 | `/פרטי-הזמנה/` | Página de detalle de pedido (WooCommerce) | Redirect 301 a `/` |
@@ -46,5 +46,4 @@ Estas 8 URLs existían en el sitemap original pero **no tienen equivalente en el
 
 ## Pendiente
 
-- No se migró el catálogo de productos de la tienda (WooCommerce) — decidir si se vende algo online o si la tienda se descarta definitivamente.
-- Confirmar con el cliente si `/חנות/` debe redirigir a `/` o a alguna sección específica.
+- Configurar los 8 redirects 301 en producción (Bluehost) antes de apagar el WordPress viejo.
