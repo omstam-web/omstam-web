@@ -1,0 +1,17 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 116.203.151.205
+          username: david
+          key: ${{ secrets.OMSTAM_DEPLOY_SSH_KEY }}
+          script: deploy
