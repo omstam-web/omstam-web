@@ -86,8 +86,33 @@ body.article-body { background: var(--parchment); }
   border-radius: 999px;
 }
 .article-body-text a { color: var(--burgundy); text-decoration: underline; text-underline-offset: 2px; }
-.article-body-text img { border-radius: 10px; margin: 1.4em 0; box-shadow: var(--shadow); }
+.article-body-text img { border-radius: 10px; margin: 1.4em 0; box-shadow: var(--shadow); max-width: 100%; height: auto; }
 .article-body-text strong { color: var(--navy); }
+.extracted-figure {
+  margin: 1.8em auto;
+  text-align: center;
+}
+.extracted-figure img { margin: 0 auto; }
+.extracted-figure figcaption {
+  font-size: 0.85rem;
+  color: #7a6f5a;
+  margin-top: 8px;
+  font-style: italic;
+}
+.extracted-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 1.6em 0;
+}
+.extracted-gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0;
+  box-shadow: var(--shadow);
+}
 .article-body-text blockquote {
   margin: 1.6em 0;
   padding: 4px 20px;
