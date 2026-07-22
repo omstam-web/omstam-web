@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="preload" as="image" href="assets/img/hero/rav-escribiendo-sefer-torah.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles/main.css">
 
 <script type="application/ld+json">
@@ -63,20 +64,71 @@
       "@type": "Course",
       "name": "קורס כתיבת סת\"ם",
       "description": "קורס כתיבת סת\"ם ברמה גבוהה, קבוצות קטנות עד כ-5 משתתפים, לימוד הלכה מעמיק ותעודת סיום.",
+      "url": "https://omstam.com/דף-הקורסים/קורס-סופר/",
       "provider": { "@id": "https://omstam.com/#organization" },
       "instructor": { "@id": "https://omstam.com/#person-rav-yohai" }
     },
     {
       "@type": "Course",
       "name": "קורס סופרי סת\"ם",
+      "description": "המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת\"ם מוסמך ומוכר, בהתאמה אישית בשיחה עם הרב יוחאי אוחיון.",
+      "url": "https://omstam.com/דף-הקורסים/קורס-סופרי-סת״ם/",
       "provider": { "@id": "https://omstam.com/#organization" },
       "instructor": { "@id": "https://omstam.com/#person-rav-yohai" }
     },
     {
       "@type": "Course",
       "name": "קורס מכניסי פרשיות ושיפוץ תפילין",
+      "description": "לימוד מקצועי של הכנסת פרשיות ושיפוץ בתי תפילין, בהתאם להלכה — לימוד פרטי, לא בקבוצה.",
+      "url": "https://omstam.com/דף-הקורסים/קורס-מכניסי-פרשיות/",
       "provider": { "@id": "https://omstam.com/#organization" },
       "instructor": { "@id": "https://omstam.com/#person-rav-yohai" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omstam.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "כמה זמן אורך קורס כתיבת סת\"ם?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "הקורס המרכזי נבנה מ-12 מפגשים, כשעתיים למפגש, בקבוצות בוטיק של כ-5 תלמידים, עם ליווי אישי צמוד מהרב יוחאי אוחיון."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "האם מקבלים תעודה בסיום הקורס?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן, קורס כתיבת סת\"ם וגם קורס מכניסי הפרשיות ושיפוץ תפילין מסתיימים בתעודה, לאחר לימוד הלכה מעמיק לכל השיטות."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מה ההבדל בין קורס כתיבת סת\"ם לקורס סופרי סת\"ם?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "קורס כתיבת סת\"ם הוא הקורס המרכזי, מהיסודות ועד לכתיבת מזוזה, תפילין וספר תורה. קורס סופרי סת\"ם הוא המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת\"ם מוסמך, בהתאמה אישית בשיחה עם הרב."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "יש אפשרות ללימוד פרטי, לא בקבוצה?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן, קורס מכניסי פרשיות ושיפוץ תפילין מועבר כלימוד פרטי, לא בקבוצה, שעה למפגש."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "איך אפשר לקבל פרטים או להירשם?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "אפשר למלא את טופס יצירת הקשר באתר, לפנות בוואטסאפ למספר 053-417-7677, או לשלוח מייל ל-y0548431060@gmail.com."
+          }
+        }
+      ]
     }
   ]
 }
@@ -87,7 +139,7 @@
 <header class="site-header" id="top">
   <div class="wrap header-inner">
     <a href="#top" class="brand">
-      <img src="assets/img/brand/logo-omanut-hastam.jpg" alt="מכון אמנות הסת&quot;ם" class="brand-logo">
+      <picture><source srcset="assets/img/brand/logo-omanut-hastam.webp" type="image/webp"><img src="assets/img/brand/logo-omanut-hastam.jpg" alt="מכון אמנות הסת&quot;ם" class="brand-logo"></picture>
       <span class="brand-name">מכון אמנות הסת"ם</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="תפריט" aria-expanded="false">
@@ -105,7 +157,7 @@
 </header>
 
 <section class="hero" id="hero">
-  <div class="hero-bg" style="background-image:url('assets/img/hero/rav-escribiendo-sefer-torah.jpg')"></div>
+  <div class="hero-bg" style="background-image:url('assets/img/hero/rav-escribiendo-sefer-torah.webp')"></div>
   <div class="hero-overlay"></div>
   <div class="wrap hero-content">
     <p class="hero-eyebrow reveal">מכון אמנות הסת"ם</p>
@@ -151,7 +203,7 @@
     <div class="courses-grid">
       <a href="דף-הקורסים/קורס-סופר/index.html" class="course-card course-card-featured reveal">
         <span class="course-badge">הקורס המרכזי</span>
-        <div class="course-img" style="background-image:url('assets/img/course/aula-estudio.jpg')"></div>
+        <div class="course-img" style="background-image:url('assets/img/course/aula-estudio.webp')"></div>
         <h3>קורס כתיבת סת"ם</h3>
         <p>הקורס המרכזי של המכון — מהיסודות ועד לכתיבת מזוזה, תפילין וספר תורה ברמה גבוהה. קבוצות בוטיק, ליווי אישי צמוד מהרב יוחאי אוחיון עד לרמה הנדרשת.</p>
         <ul class="course-stats">
@@ -164,13 +216,13 @@
         <span class="course-more">לפרטי הקורס ←</span>
       </a>
       <a href="דף-הקורסים/קורס-סופרי-סת״ם/index.html" class="course-card reveal">
-        <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-1.jpg')"></div>
+        <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-1.webp')"></div>
         <h3>קורס סופרי סת"ם</h3>
         <p>המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת"ם מוסמך ומוכר. פרטים מותאמים אישית בשיחה עם הרב יוחאי.</p>
         <span class="course-more">לפרטי הקורס ←</span>
       </a>
       <a href="דף-הקורסים/קורס-מכניסי-פרשיות/index.html" class="course-card reveal">
-        <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-2.jpg')"></div>
+        <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-2.webp')"></div>
         <h3>קורס מכניסי פרשיות ושיפוץ תפילין</h3>
         <p>לימוד מקצועי של הכנסת פרשיות ושיפוץ בתי תפילין, בהתאם להלכה — לימוד פרטי, לא בקבוצה.</p>
         <ul class="course-stats">
@@ -189,10 +241,39 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <p class="section-eyebrow reveal">שאלות נפוצות</p>
+    <h2 class="section-title reveal">מה חשוב לדעת לפני שנרשמים</h2>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>כמה זמן אורך קורס כתיבת סת"ם?</summary>
+        <p>הקורס המרכזי נבנה מ-12 מפגשים, כשעתיים למפגש, בקבוצות בוטיק של כ-5 תלמידים, עם ליווי אישי צמוד מהרב יוחאי אוחיון.</p>
+      </details>
+      <details class="faq-item">
+        <summary>האם מקבלים תעודה בסיום הקורס?</summary>
+        <p>כן, קורס כתיבת סת"ם וגם קורס מכניסי הפרשיות ושיפוץ תפילין מסתיימים בתעודה, לאחר לימוד הלכה מעמיק לכל השיטות.</p>
+      </details>
+      <details class="faq-item">
+        <summary>מה ההבדל בין קורס כתיבת סת"ם לקורס סופרי סת"ם?</summary>
+        <p>קורס כתיבת סת"ם הוא הקורס המרכזי, מהיסודות ועד לכתיבת מזוזה, תפילין וספר תורה. קורס סופרי סת"ם הוא המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת"ם מוסמך, בהתאמה אישית בשיחה עם הרב.</p>
+      </details>
+      <details class="faq-item">
+        <summary>יש אפשרות ללימוד פרטי, לא בקבוצה?</summary>
+        <p>כן — קורס מכניסי פרשיות ושיפוץ תפילין מועבר כלימוד פרטי, לא בקבוצה, שעה למפגש.</p>
+      </details>
+      <details class="faq-item">
+        <summary>איך אפשר לקבל פרטים או להירשם?</summary>
+        <p>אפשר למלא את הטופס בהמשך העמוד, לפנות בוואטסאפ למספר 053-417-7677, או לשלוח מייל ל-y0548431060@gmail.com.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="about" id="about">
   <div class="wrap about-inner">
     <div class="about-media reveal">
-      <img src="assets/img/hero/rav-escribiendo-sefer-torah.jpg" alt="הרב יוחאי אוחיון כותב ספר תורה">
+      <picture><source srcset="assets/img/hero/rav-escribiendo-sefer-torah.webp" type="image/webp"><img src="assets/img/hero/rav-escribiendo-sefer-torah.jpg" alt="הרב יוחאי אוחיון כותב ספר תורה"></picture>
     </div>
     <div class="about-text reveal">
       <p class="section-eyebrow">על המורה</p>
@@ -211,15 +292,15 @@
     <p class="section-lead reveal">מכתבי תודה אמיתיים, בכתב ידם, מתלמידים שסיימו את הקורס</p>
     <div class="testimonials-grid">
       <figure class="testimonial-card reveal">
-        <img src="assets/img/testimonios/michtav-nechemia-ben-chamo.jpg" alt="מכתב תודה מהתלמיד נחמיה בן חמו">
+        <picture><source srcset="assets/img/testimonios/michtav-nechemia-ben-chamo.webp" type="image/webp"><img src="assets/img/testimonios/michtav-nechemia-ben-chamo.jpg" alt="מכתב תודה מהתלמיד נחמיה בן חמו"></picture>
         <figcaption>נחמיה בן חמו · בסיום הקורס</figcaption>
       </figure>
       <figure class="testimonial-card reveal">
-        <img src="assets/img/testimonios/michtav-mordechai-dahan.jpg" alt="מכתב ברכה מהתלמיד מרדכי יצחק דהאן">
+        <picture><source srcset="assets/img/testimonios/michtav-mordechai-dahan.webp" type="image/webp"><img src="assets/img/testimonios/michtav-mordechai-dahan.jpg" alt="מכתב ברכה מהתלמיד מרדכי יצחק דהאן"></picture>
         <figcaption>מרדכי יצחק דהאן · בוגר הקורס</figcaption>
       </figure>
       <figure class="testimonial-card reveal">
-        <img src="assets/img/testimonios/michtav-yanon-chazan.jpg" alt="מכתב תודה מהתלמיד ינון אליה חזן">
+        <picture><source srcset="assets/img/testimonios/michtav-yanon-chazan.webp" type="image/webp"><img src="assets/img/testimonios/michtav-yanon-chazan.jpg" alt="מכתב תודה מהתלמיד ינון אליה חזן"></picture>
         <figcaption>ינון אליה חזן · בוגר הקורס</figcaption>
       </figure>
     </div>
@@ -231,15 +312,15 @@
     <p class="section-eyebrow reveal">האולפן שלנו</p>
     <h2 class="section-title reveal">מקום אחד, ריכוז מלא</h2>
     <div class="gallery-grid">
-      <div class="gallery-img reveal" style="background-image:url('assets/img/course/aula-estudio.jpg')"></div>
-      <div class="gallery-img reveal" style="background-image:url('assets/img/course/alumnos-escribiendo-1.jpg')"></div>
-      <div class="gallery-img reveal" style="background-image:url('assets/img/course/alumnos-escribiendo-2.jpg')"></div>
+      <div class="gallery-img reveal" style="background-image:url('assets/img/course/aula-estudio.webp')"></div>
+      <div class="gallery-img reveal" style="background-image:url('assets/img/course/alumnos-escribiendo-1.webp')"></div>
+      <div class="gallery-img reveal" style="background-image:url('assets/img/course/alumnos-escribiendo-2.webp')"></div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="contact-texture" style="background-image:url('assets/img/texture/caligrafia-stam.jpg')" aria-hidden="true"></div>
+  <div class="contact-texture" style="background-image:url('assets/img/texture/caligrafia-stam.webp')" aria-hidden="true"></div>
   <div class="wrap">
     <p class="section-eyebrow reveal light">נשמח לשמוע ממך</p>
     <h2 class="section-title reveal light">בואו נדבר</h2>
@@ -280,7 +361,7 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <img src="assets/img/brand/logo-omanut-hastam.jpg" alt="מכון אמנות הסת&quot;ם" class="brand-logo">
+      <picture><source srcset="assets/img/brand/logo-omanut-hastam.webp" type="image/webp"><img src="assets/img/brand/logo-omanut-hastam.jpg" alt="מכון אמנות הסת&quot;ם" class="brand-logo"></picture>
       <span>מכון אמנות הסת"ם</span>
     </div>
     <nav class="footer-nav">

@@ -309,6 +309,27 @@ section { padding: 96px 0; }
 .courses-all-link a { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .courses-all-link a:hover { color: var(--burgundy); }
 
+/* ---------- FAQ ---------- */
+.faq { background: var(--parchment-2); }
+.faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 14px; }
+.faq-item {
+  background: #fffdf7;
+  border: 1px solid rgba(182, 144, 63, 0.25);
+  border-radius: var(--radius);
+  padding: 6px 24px;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--navy);
+  padding: 16px 0;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before { content: "+ "; color: var(--gold); }
+.faq-item[open] summary::before { content: "− "; }
+.faq-item p { padding: 0 0 18px; margin: 0; color: #4a4030; line-height: 1.8; }
+
 /* ---------- About ---------- */
 .about { background: var(--navy); }
 .about-inner {
