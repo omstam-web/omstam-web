@@ -56,6 +56,31 @@
 <h2 class="extracted-heading">הזמינו הרצאה</h2>
 <p>מלאו את הפרטים בטופס למטה ואנו נשוב אליכם בהקדם לתיאום ההרצאה.</p><p>הרצאות בכל הארץ!!!</p>
       </div>
+      <form class="contact-form article-form-card" id="contactForm">
+        <div class="form-row">
+          <label for="name">שם מלא</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">טלפון</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-row">
+          <label for="email">אימייל</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-row">
+          <label for="message">איפה ומתי תרצו לקיים את ההרצאה?</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <div class="form-row form-honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-gold form-submit">שליחה</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+        <p class="form-note">הפנייה תישלח ישירות למייל של המכון. אפשר גם ליצור קשר ישירות בוואטסאפ.</p>
+      </form>
     </article>
     <div class="article-cta">
       <p>רוצה ללמוד עוד או להצטרף לקורס?</p>

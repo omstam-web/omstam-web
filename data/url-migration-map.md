@@ -42,8 +42,8 @@ Estas 8 URLs existían en el sitemap original pero **no tienen equivalente en el
 | `/author/admin/` | Archivo de autor de WordPress | Redirect 301 a `/מאמרים/` |
 | `/צרו-קשר/מפת-אתר/` | Mapa del sitio generado por plugin viejo | Reemplazado por `/sitemap.xml` (máquinas) — para humanos se puede linkear `/מאמרים/` y el menú |
 
-**Antes de dar de baja el WordPress viejo:** configurar estos 8 redirects 301 en el `.htaccess` del hosting (Bluehost) para no perder el link equity ni romper enlaces externos/guardados que apunten a esas URLs.
+**Actualización (2026-07-22):** el sitio nuevo terminó sirviéndose directo desde este VPS vía nginx (no Bluehost) — ver `.github/workflows/deploy.yml` y `/etc/nginx/sites-available/omstam.com`. Los 8 redirects 301 (+ el de `/צרו-קשר/מפת-אתר/`) ya están configurados como bloques `location = ... { return 301 ...; }` en esa config de nginx y verificados con curl. Esta config vive fuera del repo git (es infraestructura del servidor, no del sitio estático), así que no se pierde en los `git reset --hard` del auto-deploy.
 
 ## Pendiente
 
-- Configurar los 8 redirects 301 en producción (Bluehost) antes de apagar el WordPress viejo.
+- Nada pendiente de redirects. Falta decidir cuándo apagar el WordPress viejo en Bluehost.
