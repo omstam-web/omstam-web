@@ -33,24 +33,37 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="main-nav" id="mainNav">
-      <a href="../index.html#courses">קורסים</a>
-      <a href="../index.html#about">על הרב</a>
+      <a href="../קורס-כתיבת-סתם-ספרדי/index.html">קורס כתיבת סת״ם</a>
+      <a href="../שיפור-כתב-והשתלמויות/index.html">שיפור והשתלמויות</a>
       <a href="index.html">מאמרים</a>
-      <a href="../index.html#contact" class="nav-cta">צור קשר</a>
+      <a href="../צורות-האותיות-בכתב-הספרדי/index.html">צורות האותיות</a>
+      <a href="../הרצאות-סדנאות-וצפייה/index.html" class="nav-cta">הרצאות וסדנאות</a>
     </nav>
   </div>
 </header>
 
-<main class="article-wrap">
+<main class="article-wrap article-archive">
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="breadcrumb">
       <a href="../index.html">בית</a><span>/</span><span aria-current="page">מאמרים</span>
     </nav>
-    <div style="text-align:center; margin-bottom:40px;">
-      <p class="section-eyebrow">התוכן שלנו</p>
-      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);">מאמרים על כתיבת סת"ם</h1>
-      <p class="section-lead" style="margin:0 auto;">32 מאמרים מקצועיים מאת הרב יוחאי אוחיון — הלכה, כלים, טיפים וסיפורים מהשטח</p>
+    <div class="archive-hero">
+      <span class="archive-ornament" aria-hidden="true">❧</span>
+      <p class="section-eyebrow">ספריית הידע של הרב יוחאי אוחיון</p>
+      <h1>מאמרים על כתיבת סת&quot;ם</h1>
+      <p class="section-lead">הלכה ומקצוע, כתב ספרדי, תפילין, קלף ודיו — מחולקים לפי נושאים, כדי שתמצא מיד את מה שאתה מחפש.</p>
+      <div class="archive-actions">
+        <a class="btn btn-outline-dark" href="../צורות-האותיות-בכתב-הספרדי/index.html">צורות האותיות בכתב הספרדי</a>
+      </div>
     </div>
+    <nav class="topic-nav" aria-label="סינון מאמרים לפי נושא">
+      <button type="button" class="topic-filter is-active" data-filter="all">כל המאמרים</button>
+      <button type="button" class="topic-filter" data-filter="כתב-ספרדי">כתיבה ספרדית</button>
+      <button type="button" class="topic-filter" data-filter="תפילין">תפילין וקשרים</button>
+      <button type="button" class="topic-filter" data-filter="קלף-דיו">קלף, דיו וכלים</button>
+      <button type="button" class="topic-filter" data-filter="הלכה-מקצוע">הלכה ומקצוע</button>
+      <button type="button" class="topic-filter" data-filter="בריאות-ארגונומיה">בריאות וארגונומיה</button>
+    </nav>
     <div class="article-index-grid">
       <article class="article-index-card">
         <h2><a href="../אני-רוצה-לכתוב-סתם-2-2/index.html">איך הכל התחיל…</a></h2>
@@ -248,9 +261,10 @@
       <span>מכון אמנות הסת"ם</span>
     </div>
     <nav class="footer-nav">
-      <a href="../index.html#courses">קורסים</a>
+      <a href="../קורס-כתיבת-סתם-ספרדי/index.html">קורס כתיבת סת״ם</a>
+      <a href="../שיפור-כתב-והשתלמויות/index.html">שיפור והשתלמויות</a>
       <a href="index.html">מאמרים</a>
-      <a href="../index.html#contact">צור קשר</a>
+      <a href="../הרצאות-סדנאות-וצפייה/index.html">הרצאות וסדנאות</a>
     </nav>
     <div class="footer-contact">
       <a href="tel:0534177677">053-417-7677</a>
@@ -261,5 +275,39 @@
 </footer>
 
 <script src="../scripts/main.js"></script>
+<script>
+  (() => {
+    const grid = document.querySelector('.article-index-grid');
+    if (!grid) return;
+    const topics = [
+      ['כתב-ספרדי', 'כתיבה ספרדית ואמנות האות', ['כתיבת-סתם-קליגרפיה', 'שיפור-הכתב', 'כתיבת-למנצח', 'יצירות-על-קלף', 'סיום-כתיבת-האותיות', 'עשיית-התגים', 'אמנות-המחיקה']],
+      ['תפילין', 'תפילין, רצועות וקשרים', ['קשר-', 'קשר-הראש', 'הקטנת-והגדלת', 'אופן-שני', 'תפילין']],
+      ['קלף-דיו', 'קלף, דיו וכלי הכתיבה', ['קלף-', 'דיו-', 'קולמוס-', 'אדים-', 'לחות']],
+      ['בריאות-ארגונומיה', 'בריאות וארגונומיה לסופר', ['בריאות-', 'משקפיים-', 'שלחן-', 'מתעייף']],
+      ['הלכה-מקצוע', 'הלכה ומקצוע הסתם', []]
+    ];
+    const cards = [...grid.querySelectorAll('.article-index-card')];
+    const sections = new Map();
+    topics.forEach(([id, title]) => {
+      const section = document.createElement('section');
+      section.className = 'article-topic-section';
+      section.dataset.topic = id;
+      section.innerHTML = `<div class="topic-heading"><span aria-hidden="true">❧</span><h2>${title}</h2></div><div class="topic-grid"></div>`;
+      sections.set(id, section);
+      grid.appendChild(section);
+    });
+    cards.forEach(card => {
+      const href = card.querySelector('a')?.getAttribute('href') || '';
+      const topic = topics.find(([id, , terms]) => id !== 'הלכה-מקצוע' && terms.some(term => href.includes(term)))?.[0] || 'הלכה-מקצוע';
+      card.dataset.topic = topic;
+      sections.get(topic).querySelector('.topic-grid').appendChild(card);
+    });
+    document.querySelectorAll('.topic-filter').forEach(button => button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      document.querySelectorAll('.topic-filter').forEach(item => item.classList.toggle('is-active', item === button));
+      sections.forEach((section, id) => section.hidden = selected !== 'all' && id !== selected);
+    }));
+  })();
+</script>
 </body>
 </html>

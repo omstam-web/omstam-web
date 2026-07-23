@@ -194,8 +194,68 @@ body.article-body { background: var(--parchment); }
 .article-index-card p { color: #4a4030; font-size: 0.92rem; margin: 0; }
 .article-index-card .article-meta { border: none; padding: 0; margin: 10px 0 0; }
 
+/* Article archive — a quieter Spanish-Moroccan language: arches, ink and old gold. */
+.article-archive {
+  background:
+    radial-gradient(ellipse at 7% 3%, rgba(192, 149, 74, .13) 0 2px, transparent 3px) 0 0/24px 24px,
+    radial-gradient(ellipse at 93% 3%, rgba(192, 149, 74, .11) 0 2px, transparent 3px) 0 0/24px 24px,
+    #f8f3e7;
+}
+.archive-hero {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto 30px;
+  padding: 46px clamp(24px, 6vw, 74px) 40px;
+  text-align: center;
+  overflow: hidden;
+  color: #f8f3e7;
+  background: linear-gradient(125deg, #102b46, #173957 60%, #214c68);
+  border: 1px solid rgba(219, 180, 107, .7);
+  border-radius: 180px 180px 30px 30px;
+  box-shadow: 0 22px 42px rgba(13, 35, 56, .22);
+}
+.archive-hero::before, .archive-hero::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(236, 208, 145, .38);
+  border-radius: 50%;
+  top: -92px;
+}
+.archive-hero::before { right: -48px; box-shadow: 0 0 0 20px rgba(236,208,145,.07), 0 0 0 42px rgba(236,208,145,.05); }
+.archive-hero::after { left: -48px; box-shadow: 0 0 0 20px rgba(236,208,145,.07), 0 0 0 42px rgba(236,208,145,.05); }
+.archive-hero > * { position: relative; z-index: 1; }
+.archive-hero .section-eyebrow { color: #efd08e; letter-spacing: .08em; }
+.archive-hero h1 { color: #fff8e9; font-size: clamp(2rem, 5vw, 3.45rem); margin-bottom: 12px; }
+.archive-hero .section-lead { color: rgba(255,248,233,.87); margin: 0 auto; max-width: 650px; }
+.archive-ornament { display: block; color: #efd08e; font-size: 2rem; line-height: 1; margin-bottom: 7px; transform: rotate(180deg); }
+.archive-actions { margin-top: 22px; }
+.archive-actions .btn-outline-dark { color: #fff8e9; border-color: rgba(239,208,142,.85); }
+.archive-actions .btn-outline-dark:hover { background: #efd08e; color: #102b46; }
+.topic-nav { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; max-width: 980px; margin: 0 auto 38px; }
+.topic-filter { font: inherit; color: #173957; cursor: pointer; border: 1px solid rgba(182,144,63,.52); background: rgba(255,253,247,.78); border-radius: 999px; padding: 9px 17px; transition: .2s ease; }
+.topic-filter:hover, .topic-filter.is-active { background: #173957; color: #fff8e9; border-color: #173957; box-shadow: 0 7px 15px rgba(23,57,87,.16); }
+.article-archive .article-index-grid { display: block; max-width: 1080px; }
+.article-topic-section { margin: 0 0 46px; scroll-margin-top: 100px; }
+.topic-heading { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 19px; color: #173957; }
+.topic-heading::before, .topic-heading::after { content: ""; width: min(14vw, 126px); height: 16px; border-top: 1px solid rgba(182,144,63,.72); border-bottom: 1px solid rgba(182,144,63,.28); border-radius: 50%; }
+.topic-heading span { color: #b6903f; font-size: 1.4rem; }
+.topic-heading h2 { color: #173957; font-size: clamp(1.35rem, 3vw, 1.8rem); margin: 0; }
+.topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.article-archive .article-index-card { position: relative; overflow: hidden; min-height: 176px; padding: 26px 26px 23px; border-color: rgba(182,144,63,.36); border-radius: 25px 25px 10px 10px; box-shadow: 0 12px 25px rgba(30,48,61,.09); transition: transform .2s ease, box-shadow .2s ease; }
+.article-archive .article-index-card::before { content: ""; position: absolute; top: 0; right: 22px; left: 22px; height: 3px; border-radius: 0 0 999px 999px; background: linear-gradient(90deg, transparent, #c49a4d, transparent); }
+.article-archive .article-index-card:hover { transform: translateY(-4px); box-shadow: 0 18px 30px rgba(30,48,61,.15); }
+.article-archive .article-index-card h2 { font-size: 1.16rem; }
+.article-archive .article-index-card a { color: #173957; }
+.article-archive .article-index-card a:hover { color: #9b682e; }
+.article-archive .article-index-card .article-meta { color: #9b682e; font-weight: 600; }
+
 @media (max-width: 720px) {
   .article-wrap { padding: 110px 0 60px; }
   .article-content { padding: 30px 18px 36px; }
   .article-index-grid { grid-template-columns: 1fr; }
+  .archive-hero { border-radius: 105px 105px 22px 22px; padding-top: 38px; }
+  .topic-grid { grid-template-columns: 1fr; }
+  .topic-heading::before, .topic-heading::after { width: 12vw; }
 }

@@ -1,0 +1,28 @@
+/* Site-map layer: shared by the new primary pages */
+.site-structure-page { background: #f8f4ea; }
+.page-hero { padding: 150px 0 78px; background: linear-gradient(135deg, #1d1113, #5d1b27); color: #f8f4ea; }
+.page-hero .eyebrow { color: #d9b876; font-weight: 700; margin: 0 0 12px; }
+.page-hero h1 { color: #fff8e9; font-size: clamp(2.2rem, 5vw, 4rem); }
+.page-hero p { max-width: 720px; font-size: 1.18rem; margin: 0; color: #f3e6cf; }
+.page-section { padding: 72px 0; }
+.page-section.alt { background: #efe4cf; }
+.page-section h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.page-section > .wrap > p { max-width: 760px; }
+.path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
+.path-card { display: block; min-height: 220px; padding: 30px; background: #fffdf7; border: 1px solid rgba(182,144,63,.35); border-radius: 15px; box-shadow: 0 12px 26px rgba(32,26,18,.08); }
+.path-card:hover { transform: translateY(-4px); border-color: #b6903f; }
+.path-card h2, .path-card h3 { color: #6b1f2a; }
+.path-card p { margin: 0 0 16px; color: #4a4030; }
+.path-card .link { color: #6b1f2a; font-weight: 700; }
+.topic-list { columns: 2; gap: 38px; padding: 0; list-style: none; }
+.topic-list li { padding: 10px 28px 10px 0; position: relative; border-bottom: 1px solid rgba(107,31,42,.12); }
+.topic-list li::before { content: "•"; position: absolute; right: 6px; color: #b6903f; font-size: 1.35rem; line-height: 1.25; }
+.callout { background: #6b1f2a; color: #fff8e9; padding: 38px; border-radius: 16px; }
+.callout h2 { color: #fff8e9; }
+.callout p { color: #f3e6cf; }
+.callout .btn { margin-top: 8px; }
+.resource-note { margin-top: 25px; padding: 23px; border-right: 4px solid #b6903f; background: #fffdf7; }
+.page-footer { background: #101d2e; color: #f4ecd9; padding: 30px 0; }
+.page-footer .wrap { display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.page-footer a { color: #d9b876; }
+@media (max-width: 780px) { .path-grid { grid-template-columns: 1fr; } .topic-list { columns: 1; } .page-hero { padding-top: 125px; } }
