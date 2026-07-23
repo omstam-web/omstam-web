@@ -22,6 +22,19 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => observer.observe(el));
 
+document.querySelectorAll('.video-frame[data-youtube-id]').forEach(frame => {
+  const play = frame.querySelector('.video-play');
+  play.addEventListener('click', () => {
+    const id = frame.dataset.youtubeId;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    iframe.title = 'סרטון כתיבת סת״ם';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    frame.replaceChildren(iframe);
+  }, { once: true });
+});
+
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 if (contactForm) {
