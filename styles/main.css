@@ -1,15 +1,16 @@
 :root {
-  --navy: #29435a;
-  --navy-2: #1f3548;
-  --black: #1c211f;
-  --gold: #b18a45;
-  --gold-light: #d6b978;
-  --parchment: #f8f4ec;
-  --parchment-2: #eee3d0;
+  /* Shared bright palette: ivory, warm cream, old gold and ink-brown. */
+  --navy: #3d3025;
+  --navy-2: #5a4330;
+  --black: #3d3025;
+  --gold: #b58a3d;
+  --gold-light: #e8d5a7;
+  --parchment: #f8f1e3;
+  --parchment-2: #efe1c7;
   --paper: #fffdf8;
-  --burgundy: #704145;
-  --bottle: #385244;
-  --ink: #302a26;
+  --burgundy: #5a4330;
+  --bottle: #5a4330;
+  --ink: #3d3025;
   --serif: "Frank Ruhl Libre", "David Libre", serif;
   --sans: "Frank Ruhl Libre", "David Libre", serif;
   --radius: 34px 34px 12px 12px;
@@ -85,7 +86,7 @@ a { color: inherit; text-decoration: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 40;
-  background: rgba(245, 240, 231, 0.93);
+  background: rgba(255, 253, 248, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(177, 138, 69, 0.28);
 }
@@ -558,6 +559,30 @@ section { padding: 92px 0; }
 .footer-youtube:hover { background: #c62828; border-color: #c62828; }
 .footer-whatsapp:hover { background: #1f9d55; border-color: #1f9d55; }
 .footer-copy { text-align: center; color: rgba(244, 236, 217, 0.5); font-size: 0.8rem; margin: 18px 0 0; }
+
+/* Compatibility for existing inner-page sections: use the homepage palette unchanged. */
+.enrollment,
+.about,
+.contact {
+  background: linear-gradient(135deg, var(--paper), var(--parchment-2));
+  color: var(--ink);
+}
+.enrollment-copy .section-eyebrow,
+.about-text .section-eyebrow { color: var(--gold); }
+.enrollment-copy .section-title,
+.about-text .section-title { color: var(--ink); }
+.enrollment-copy > p:not(.section-eyebrow),
+.about-text p { color: #5b4c3e; }
+.about-text .btn-outline-dark { color: var(--ink); border-color: var(--burgundy); }
+.about-text .btn-outline-dark:hover { color: var(--paper); background: var(--home-brown, #5a4330); }
+.contact-card { box-shadow: 0 30px 60px rgba(77, 55, 32, .14); }
+.site-footer {
+  background: var(--parchment-2);
+  border-top: 1px solid rgba(181, 138, 61, .46);
+}
+.footer-brand, .footer-nav a, .footer-action, .footer-copy { color: var(--ink); }
+.footer-action { border-color: rgba(90, 67, 48, .42); }
+.footer-nav a:hover { color: var(--burgundy); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
