@@ -1,444 +1,139 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מכון אמנות הסת"ם | לימוד כתיבת סת"ם עם הרב יוחאי אוחיון</title>
-<meta name="description" content="קורס כתיבת סת&quot;ם ברמה גבוהה עם הרב יוחאי אוחיון — קבוצות קטנות של 6 תלמידים בלבד, ליווי אישי עד להצלחה, לימוד הלכה מעמיק ותעודת סיום. מכון אמנות הסת&quot;ם.">
-<link rel="canonical" href="https://omstam.com/">
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="he_IL">
-<meta property="og:title" content="מכון אמנות הסת&quot;ם | לימוד כתיבת סת&quot;ם עם הרב יוחאי אוחיון">
-<meta property="og:description" content="קורס כתיבת סת&quot;ם ברמה גבוהה עם הרב יוחאי אוחיון — קבוצות קטנות, ליווי אישי עד להצלחה, לימוד הלכה מעמיק ותעודת סיום.">
-<meta property="og:url" content="https://omstam.com/">
-<meta property="og:site_name" content="מכון אמנות הסת&quot;ם">
-<meta property="og:image" content="https://omstam.com/assets/img/hero/rav-escribiendo-sefer-torah.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" type="image/jpeg" href="assets/img/brand/logo-omanut-hastam.jpg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-
-
-<link rel="preload" as="image" href="assets/img/hero/rav-escribiendo-sefer-torah.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles/main.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "EducationalOrganization",
-      "@id": "https://omstam.com/#organization",
-      "name": "מכון אמנות הסת\"ם",
-      "alternateName": "Omanut HaStam Institute",
-      "url": "https://omstam.com/",
-      "logo": "https://omstam.com/assets/img/brand/logo-omanut-hastam.jpg",
-      "image": "https://omstam.com/assets/img/hero/rav-escribiendo-sefer-torah.jpg",
-      "email": "y0548431060@gmail.com",
-      "telephone": "+972534177677",
-      "founder": { "@id": "https://omstam.com/#person-rav-yohai" },
-      "sameAs": []
-    },
-    {
-      "@type": "Person",
-      "@id": "https://omstam.com/#person-rav-yohai",
-      "name": "הרב יוחאי אוחיון",
-      "alternateName": "Rav Yohai Ohayon",
-      "jobTitle": "מומחה ומלמד כתיבת סת\"ם",
-      "description": "מומחה ומלמד כתיבת סת\"ם, סגירת בתים וקשירת רצועות. מחבר הספר \"יסודות התפילין\". מייסד ומנהל מכון אמנות הסת\"ם.",
-      "worksFor": { "@id": "https://omstam.com/#organization" },
-      "image": "https://omstam.com/assets/img/hero/rav-escribiendo-sefer-torah.jpg"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://omstam.com/#website",
-      "url": "https://omstam.com/",
-      "name": "מכון אמנות הסת\"ם",
-      "publisher": { "@id": "https://omstam.com/#organization" },
-      "inLanguage": "he-IL"
-    },
-    {
-      "@type": "Course",
-      "name": "קורס כתיבת סת\"ם",
-      "description": "קורס כתיבת סת\"ם בכתב ספרדי, מהיסוד ובקבוצות קטנות של 6 תלמידים בלבד. לימוד מעשי, הלכה וליווי אישי עם הרב יוחאי אוחיון.",
-      "url": "https://omstam.com/דף-הקורסים/קורס-סופר/",
-      "provider": { "@id": "https://omstam.com/#organization" },
-      "instructor": { "@id": "https://omstam.com/#person-rav-yohai" }
-    },
-    {
-      "@type": "Course",
-      "name": "קורס סופרי סת\"ם",
-      "description": "המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת\"ם מוסמך ומוכר, בהתאמה אישית בשיחה עם הרב יוחאי אוחיון.",
-      "url": "https://omstam.com/דף-הקורסים/קורס-סופרי-סת״ם/",
-      "provider": { "@id": "https://omstam.com/#organization" },
-      "instructor": { "@id": "https://omstam.com/#person-rav-yohai" }
-    },
-    {
-      "@type": "Course",
-      "name": "קורס מכניסי פרשיות ושיפוץ תפילין",
-      "description": "לימוד מקצועי של הכנסת פרשיות ושיפוץ בתי תפילין, בהתאם להלכה — לימוד פרטי, לא בקבוצה.",
-      "url": "https://omstam.com/דף-הקורסים/קורס-מכניסי-פרשיות/",
-      "provider": { "@id": "https://omstam.com/#organization" },
-      "instructor": { "@id": "https://omstam.com/#person-rav-yohai" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://omstam.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "כמה זמן אורך קורס כתיבת סת\"ם?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "מחזור אלול נפתח בשתי קבוצות בוקר: 7:00–9:00 ו-9:00–11:00. בכל קבוצה 6 תלמידים בלבד, כדי לאפשר ליווי אישי צמוד."
-          }
-        },
-        {
-          "@type": "Question",
-            "name": "למי מתאים קורס כתיבת סת\"ם?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "הקורס מיועד למי שרוצה להתחיל מן היסוד ולבנות כתב ספרדי הלכתי, מדויק, יפה וזורם. אין צורך להגיע עם ניסיון קודם בכתיבה."
-          }
-        },
-        {
-          "@type": "Question",
-            "name": "איך נרשמים למחזור אלול?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "פונים לרב יוחאי אוחיון בוואטסאפ או במייל לשיחת היכרות קצרה והרשמה. מספר המקומות מוגבל לשש תלמידים בלבד בכל קבוצה."
-          }
-        },
-        {
-          "@type": "Question",
-            "name": "אפשר לראות את הכתיבה לפני שמחליטים?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "כן. באתר ובערוץ היוטיוב של המכון אפשר להתרשם מהכתיבה, מהשיעורים ומהעבודה המעשית."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "איך אפשר לקבל פרטים או להירשם?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "אפשר למלא את טופס יצירת הקשר באתר, לפנות בוואטסאפ למספר 053-417-7677, או לשלוח מייל ל-y0548431060@gmail.com."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>קורס כתיבת סת״ם בכתב ספרדי | הרב יוחאי אוחיון</title>
+  <meta name="description" content="קורס מעשי למתחילים בכתב ספרדי, בשיטת הרב יוחאי אוחיון: כתב הלכתי, מדויק, יפה וזורם. קבוצות ערב קטנות וליווי אישי.">
+  <link rel="canonical" href="https://omstam.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="קורס כתיבת סת״ם בכתב ספרדי | הרב יוחאי אוחיון">
+  <meta property="og:description" content="לימוד מעשי מן היסוד ועד לכתב הלכתי, מדויק, יפה וזורם — בקבוצה קטנה ובליווי אישי.">
+  <meta property="og:image" content="https://omstam.com/assets/img/hero/rav-escribiendo-sefer-torah.jpg">
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="מכון אמנות הסת״ם - תחילת העמוד">
+        <img src="assets/img/brand/logo-omanut-hastam.webp" alt="לוגו מכון אמנות הסת״ם" class="brand-logo">
+        <span>מכון אמנות הסת״ם</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="פתיחת תפריט" aria-expanded="false"><i></i><i></i><i></i></button>
+      <nav class="main-nav" id="mainNav" aria-label="ניווט ראשי">
+        <a href="#method">השיטה</a>
+        <a href="#course">מה מקבלים</a>
+        <a href="#evening-class">המחזור הקרוב</a>
+        <a class="nav-cta" href="https://wa.me/972534177677?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%94%D7%A8%D7%91%20%D7%99%D7%95%D7%97%D7%90%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D." target="_blank" rel="noopener">לבדיקת התאמה</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="site-header" id="top">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <picture><source srcset="assets/img/brand/logo-omanut-hastam.webp" type="image/webp"><img src="assets/img/brand/logo-omanut-hastam.jpg" alt="מכון אמנות הסת&quot;ם" class="brand-logo"></picture>
-      <span class="brand-name">מכון אמנות הסת"ם</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="תפריט" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="main-nav" id="mainNav">
-      <a href="קורס-כתיבת-סתם-ספרדי/index.html">קורס כתיבת סת״ם</a>
-      <a href="שיפור-כתב-והשתלמויות/index.html">שיפור והשתלמויות</a>
-      <a href="מאמרים/index.html">מאמרים</a>
-      <a href="צורות-האותיות-בכתב-הספרדי/index.html">צורות האותיות</a>
-      <a href="#enrollment" class="nav-cta">הרשמה למחזור אלול</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero" id="hero">
-  <div class="hero-bg" style="background-image:url('assets/img/hero/rav-escribiendo-sefer-torah.webp')"></div>
-  <div class="hero-overlay"></div>
-  <span class="hero-orb hero-orb-one" aria-hidden="true"></span>
-  <span class="hero-orb hero-orb-two" aria-hidden="true"></span>
-  <span class="hero-arch" aria-hidden="true"></span>
-  <div class="wrap hero-content">
-    <div class="hero-panel reveal">
-      <p class="hero-eyebrow">מכון אמנות הסת״ם · בהנחיית הרב יוחאי אוחיון</p>
-      <h1 class="hero-title">ללמוד כתיבת סת״ם<br>בכתב ספרדי</h1>
-      <p class="hero-subtitle">מהאות הראשונה ועד לכתב הלכתי, מדויק, יפה וזורם — בשיטה מסודרת ובליווי אישי.</p>
-      <div class="hero-actions">
-        <a href="#enrollment" class="btn btn-gold">לפרטים ולהרשמה למחזור אלול</a>
-        <a href="#video" class="btn btn-ink">לראות את הכתיבה</a>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-ornament hero-ornament-one" aria-hidden="true"></div>
+      <div class="hero-ornament hero-ornament-two" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">מכון אמנות הסת״ם</p>
+          <h1 id="hero-title">ללמוד כתיבת סת״ם<br>בכתב ספרדי</h1>
+          <p class="hero-lead">אצל הסופר הרב יוחאי אוחיון</p>
+          <p class="hero-text">קורס מעשי למתחילים, בשיטת הרב אוחיון: מן היסוד ועד לכתב הלכתי, מדויק, יפה וזורם.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/972534177677?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%94%D7%A8%D7%91%20%D7%99%D7%95%D7%97%D7%90%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D." target="_blank" rel="noopener">לבדיקת התאמה והרשמה</a>
+            <a class="btn btn-secondary" href="mailto:Y0548431060@gmail.com?subject=%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D">שלח הודעה למייל</a>
+          </div>
+        </div>
+        <figure class="hero-image reveal">
+          <div class="image-backdrop" aria-hidden="true"></div>
+          <img src="assets/img/hero/rav-escribiendo-sefer-torah.webp" alt="הרב יוחאי אוחיון כותב בספר תורה">
+        </figure>
       </div>
-      <p class="hero-note">שתי קבוצות בוקר · 6 תלמידים בלבד בכל קבוצה</p>
-    </div>
-  </div>
-  <div class="hero-scroll-hint" aria-hidden="true"></div>
-</section>
+    </section>
 
-<section class="video-showcase" id="video" aria-label="צפייה בכתיבה">
-  <div class="wrap video-showcase-inner">
-    <div class="video-copy reveal">
-      <p class="section-eyebrow">לפני שמחליטים</p>
-      <h2 class="section-title">רואים את הכתב מקרוב</h2>
-      <p>צפייה קצרה בכתיבה עצמה נותנת לך להרגיש את הדיוק, הקצב והדרך שבה נבנית כל אות.</p>
-      <a href="#enrollment" class="text-link">רוצה ללמוד כך? לפרטים על מחזור אלול ←</a>
-    </div>
-    <div class="video-frame reveal" data-youtube-id="xf0o7TWjTmM">
-      <img src="https://i.ytimg.com/vi/xf0o7TWjTmM/hqdefault.jpg" alt="סרטון כתיבת סת״ם של הרב יוחאי אוחיון" loading="lazy">
-      <button class="video-play" type="button" aria-label="הפעלת סרטון כתיבת סת״ם">
-        <span aria-hidden="true">▶</span>
-        <b>לצפייה בכתיבה</b>
-      </button>
-    </div>
-  </div>
-</section>
-
-<section class="learning" id="learning">
-  <div class="wrap learning-inner">
-    <div class="learning-media reveal">
-      <img src="assets/img/site/teaching-live.webp" alt="הרב יוחאי אוחיון מלמד תלמידים ליד שולחן סופרים">
-    </div>
-    <div class="learning-text reveal">
-      <p class="section-eyebrow">לא מנחשים את הדרך</p>
-      <h2 class="section-title">מאחורי כל כתב יפה מסתתרת שיטה</h2>
-      <p>לומדים ליד השולחן: רואים כל תנועה, מבינים את מבנה האות ומתרגלים נכון. כך נבנה כתב ספרדי שאינו רק יפה לעין, אלא גם מדויק, הלכתי וזורם ביד.</p>
-      <a href="#enrollment" class="text-link">רוצה לבדוק אם הקורס מתאים לך? ←</a>
-    </div>
-  </div>
-</section>
-
-<section class="enrollment" id="enrollment" aria-label="פרטי מחזור אלול">
-  <div class="wrap enrollment-inner">
-    <div class="enrollment-copy reveal">
-      <p class="section-eyebrow">מחזור אלול</p>
-      <h2 class="section-title">הזמן להתחיל נכון</h2>
-      <p>קורס כתיבת סת״ם בכתב ספרדי למתחילים, בקבוצה קטנה ועם ליווי אישי לאורך הדרך.</p>
-      <a href="https://wa.me/972534177677?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%94%D7%A8%D7%91%20%D7%99%D7%95%D7%97%D7%90%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D%20%D7%91%D7%9E%D7%97%D7%96%D7%95%D7%A8%20%D7%90%D7%9C%D7%95%D7%9C." target="_blank" rel="noopener" class="btn btn-gold">לבדיקת התאמה והרשמה</a>
-    </div>
-    <ul class="enrollment-details reveal">
-      <li><strong>שתי קבוצות בוקר</strong><span>7:00–9:00 · 9:00–11:00</span></li>
-      <li><strong>קבוצה קטנה באמת</strong><span>6 תלמידים בלבד בכל קבוצה</span></li>
-      <li><strong>הוראה אישית</strong><span>הרב יוחאי אוחיון לידך בכל שלב</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="features" aria-label="מה מקבלים בקורס">
-  <div class="wrap features-grid">
-    <div class="feature-card reveal">
-      <span class="feature-icon" aria-hidden="true">✒</span>
-      <h3>ליווי שרואים</h3>
-      <p>6 תלמידים בלבד בכל קבוצה, כדי שכל תלמיד יקבל התייחסות אישית אמיתית.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon" aria-hidden="true">📖</span>
-      <h3>שיטה לבניית האות</h3>
-      <p>לא מחקים צורה מבחוץ: מבינים את ההיגיון שמאחורי הכתב הספרדי ובונים אותו נכון.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon" aria-hidden="true">🤝</span>
-      <h3>הלכה לצד המלאכה</h3>
-      <p>הכתיבה נלמדת עם היסודות ההלכתיים שמעמידים מאחוריה כתב שאפשר לסמוך עליו.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon" aria-hidden="true">🎓</span>
-      <h3>דרך שאפשר להמשיך איתה</h3>
-      <p>בסיום נשארת ביד שיטה מסודרת, יכולת תרגול והבנה אמיתית של הכתב.</p>
-    </div>
-  </div>
-</section>
-
-<section class="courses" id="courses">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">מה נמצא מעבר לשיעור</p>
-    <h2 class="section-title reveal">מכון שמלווה את עולם הסת״ם</h2>
-    <div class="courses-grid">
-      <a href="דף-הקורסים/קורס-סופר/index.html" class="course-card course-card-featured reveal">
-        <span class="course-badge">המסלול המרכזי</span>
-        <div class="course-img" style="background-image:url('assets/img/course/aula-estudio.webp')"></div>
-        <h3>קורס כתיבת סת״ם בכתב ספרדי</h3>
-        <p>למתחילים שרוצים לבנות כתב הלכתי, מדויק, יפה וזורם — מן היסוד, בהדרכה אישית ובסדר ברור.</p>
-        <ul class="course-stats">
-          <li>מחזור אלול</li>
-          <li>6 תלמידים בלבד בקבוצה</li>
-          <li>שתי קבוצות בוקר</li>
-          <li>ליווי אישי</li>
-        </ul>
-        <span class="course-more">לפרטי הקורס ←</span>
-      </a>
-      <a href="דף-הקורסים/קורס-סופרי-סת״ם/index.html" class="course-card reveal">
-        <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-1.webp')"></div>
-        <h3>קורס סופרי סת"ם</h3>
-        <p>המשך מעמיק למי שרוצה להסמיך את עצמו כסופר סת"ם מוסמך ומוכר. פרטים מותאמים אישית בשיחה עם הרב יוחאי.</p>
-        <span class="course-more">לפרטי הקורס ←</span>
-      </a>
-      <a href="דף-הקורסים/קורס-מכניסי-פרשיות/index.html" class="course-card reveal">
-        <div class="course-img" style="background-image:url('assets/img/course/alumnos-escribiendo-2.webp')"></div>
-        <h3>קורס מכניסי פרשיות ושיפוץ תפילין</h3>
-        <p>לימוד מקצועי של הכנסת פרשיות ושיפוץ בתי תפילין, בהתאם להלכה — לימוד פרטי, לא בקבוצה.</p>
-        <ul class="course-stats">
-          <li>לימוד פרטי (לא בקבוצה)</li>
-          <li>שעה למפגש</li>
-          <li>לימוד הלכה לכל השיטות</li>
-          <li>תעודה בסיום</li>
-        </ul>
-        <span class="course-more">לפרטי הקורס ←</span>
-      </a>
-    </div>
-    <p class="courses-all-link reveal"><a href="דף-הקורסים/index.html">לכל הקורסים, ההשתלמויות וההרצאות של המכון ←</a></p>
-    <div class="courses-cta reveal">
-      <a href="#enrollment" class="btn btn-gold">לפרטים על מחזור אלול</a>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">שאלות נפוצות</p>
-    <h2 class="section-title reveal">מה חשוב לדעת לפני שנרשמים</h2>
-    <div class="faq-list reveal">
-      <details class="faq-item">
-        <summary>למי מתאים קורס כתיבת סת״ם?</summary>
-        <p>למי שרוצה להתחיל מן היסוד ולבנות כתב ספרדי הלכתי, מדויק, יפה וזורם. אין צורך להגיע עם ניסיון קודם בכתיבה.</p>
-      </details>
-      <details class="faq-item">
-        <summary>מתי מתקיים מחזור אלול?</summary>
-        <p>המחזור נפתח בשתי קבוצות בוקר: 7:00–9:00 ו־9:00–11:00. בכל קבוצה 6 תלמידים בלבד.</p>
-      </details>
-      <details class="faq-item">
-        <summary>איך נרשמים?</summary>
-        <p>פונים להרב יוחאי אוחיון בוואטסאפ או במייל לשיחת היכרות קצרה והרשמה. מספר המקומות מוגבל.</p>
-      </details>
-      <details class="faq-item">
-        <summary>אפשר לראות את הכתיבה לפני שמחליטים?</summary>
-        <p>כן. אפשר להתרשם מן הכתיבה ומן השיעורים באתר ובערוץ היוטיוב של המכון.</p>
-      </details>
-      <details class="faq-item">
-        <summary>איך אפשר לקבל פרטים או להירשם?</summary>
-        <p>אפשר למלא את הטופס בהמשך העמוד, לפנות בוואטסאפ למספר 053-417-7677, או לשלוח מייל ל-y0548431060@gmail.com.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="wrap about-inner">
-    <div class="about-media reveal">
-      <img src="assets/img/site/writing-detail.webp" alt="תקריב כתיבת אותיות סת״ם בקולמוס">
-    </div>
-    <div class="about-text reveal">
-      <p class="section-eyebrow">על המורה</p>
-      <h2 class="section-title">הרב יוחאי אוחיון שליט"א</h2>
-      <p>ראש מכון אמנות הסת״ם ומומחה בהוראת הכתב הספרדי. מחבר הספר "יסודות התפילין", ומלמד כתיבה, סגירת בתים וקשירת רצועות.</p>
-      <p>ההוראה במכון נשענת על מלאכה חיה, לימוד הלכה ומחקר של מסורת הכתב הספרדי — כדי לתת לתלמיד דרך בהירה, ולא רק תוצאה רגעית.</p>
-      <a href="#enrollment" class="btn btn-outline-dark">לשיחת היכרות</a>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" id="testimonials">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">מה אומרים התלמידים</p>
-    <h2 class="section-title reveal">מכתבים מהלב</h2>
-    <p class="section-lead reveal">מכתבי תודה אמיתיים, בכתב ידם, מתלמידים שסיימו את הקורס</p>
-    <div class="testimonials-grid">
-      <figure class="testimonial-card reveal">
-        <picture><source srcset="assets/img/testimonios/michtav-nechemia-ben-chamo.webp" type="image/webp"><img src="assets/img/testimonios/michtav-nechemia-ben-chamo.jpg" alt="מכתב תודה מהתלמיד נחמיה בן חמו"></picture>
-        <figcaption>נחמיה בן חמו · בסיום הקורס</figcaption>
-      </figure>
-      <figure class="testimonial-card reveal">
-        <picture><source srcset="assets/img/testimonios/michtav-mordechai-dahan.webp" type="image/webp"><img src="assets/img/testimonios/michtav-mordechai-dahan.jpg" alt="מכתב ברכה מהתלמיד מרדכי יצחק דהאן"></picture>
-        <figcaption>מרדכי יצחק דהאן · בוגר הקורס</figcaption>
-      </figure>
-      <figure class="testimonial-card reveal">
-        <picture><source srcset="assets/img/testimonios/michtav-yanon-chazan.webp" type="image/webp"><img src="assets/img/testimonios/michtav-yanon-chazan.jpg" alt="מכתב תודה מהתלמיד ינון אליה חזן"></picture>
-        <figcaption>ינון אליה חזן · בוגר הקורס</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">העולם של המכון</p>
-    <h2 class="section-title reveal">מקום של כתיבה, מסורת ומחקר</h2>
-    <div class="gallery-grid">
-      <figure class="gallery-item reveal"><img src="assets/img/site/institute-space.webp" alt="חלל הלימוד של מכון אמנות הסת״ם"><figcaption>חלל לימוד מקצועי ומזמין</figcaption></figure>
-      <figure class="gallery-item reveal"><img src="assets/img/site/writing-detail.webp" alt="תקריב אותיות בכתב סת״ם"><figcaption>דיוק שנבנה באות אחר אות</figcaption></figure>
-      <figure class="gallery-item reveal"><img src="assets/img/site/ancient-manuscript.webp" alt="כתב יד עברי עתיק על קלף"><figcaption>כתבי־יד שמאירים את מסורת הכתב</figcaption></figure>
-      <figure class="gallery-item reveal"><img src="assets/img/site/research-manuscript.webp" alt="הרב יוחאי אוחיון מעיין בכתבי יד עתיקים"><figcaption>עיון, מחקר ושורשי המסורת</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="contact-texture" style="background-image:url('assets/img/texture/caligrafia-stam.webp')" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="section-eyebrow reveal light">הצעד הבא שלך</p>
-    <h2 class="section-title reveal light">רוצה להתחיל לכתוב נכון?</h2>
-    <div class="contact-card reveal">
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <label for="name">שם מלא</label>
-          <input type="text" id="name" name="name" required>
+    <section class="video-section" id="video" aria-labelledby="video-title">
+      <div class="wrap video-layout">
+        <div class="video-copy reveal">
+          <p class="eyebrow">הכתיבה מקרוב</p>
+          <h2 id="video-title">רוצה לצאת סופר ברמה גבוהה — ולכתוב כתב ספרדי מושלם?</h2>
+          <p>צפה בכתיבה מקרוב, וראה כיצד תנועה נכונה, מבנה מדויק ושיטה ברורה יוצרים כתב נאה, זורם ומקצועי.</p>
         </div>
-        <div class="form-row">
-          <label for="phone">טלפון</label>
-          <input type="tel" id="phone" name="phone" required>
+        <div class="video-frame reveal" data-youtube-id="xf0o7TWjTmM">
+          <img src="https://i.ytimg.com/vi/xf0o7TWjTmM/hqdefault.jpg" alt="סרטון כתיבת סת״ם של הרב יוחאי אוחיון" loading="lazy">
+          <button class="video-play" type="button" aria-label="הפעלת סרטון כתיבת סת״ם"><span aria-hidden="true">▶</span> לצפייה בכתיבה</button>
         </div>
-        <div class="form-row">
-          <label for="email">אימייל</label>
-          <input type="email" id="email" name="email">
-        </div>
-        <div class="form-row">
-          <label for="message">קצת עליך, ולמה מעניין אותך הקורס</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-        </div>
-        <div class="form-row form-honeypot" aria-hidden="true">
-          <label for="website">Website</label>
-          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-        </div>
-        <button type="submit" class="btn btn-gold form-submit">שלחו לי פרטים על מחזור אלול</button>
-        <p class="form-status" id="formStatus" role="status"></p>
-        <p class="form-note">הפנייה תישלח ישירות למייל של המכון. אפשר גם ליצור קשר ישירות בוואטסאפ.</p>
-      </form>
-      <div class="contact-direct">
-        <a href="https://wa.me/972534177677?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%94%D7%A8%D7%91%20%D7%99%D7%95%D7%97%D7%90%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D%20%D7%91%D7%9E%D7%97%D7%96%D7%95%D7%A8%20%D7%90%D7%9C%D7%95%D7%9C." target="_blank" rel="noopener" class="btn btn-outline">וואטסאפ: 053-417-7677</a>
-        <a href="mailto:y0548431060@gmail.com" class="btn btn-outline">מייל: y0548431060@gmail.com</a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <picture><source srcset="assets/img/brand/logo-omanut-hastam.webp" type="image/webp"><img src="assets/img/brand/logo-omanut-hastam.jpg" alt="מכון אמנות הסת&quot;ם" class="brand-logo"></picture>
-      <span>מכון אמנות הסת"ם</span>
-    </div>
-    <nav class="footer-nav">
-      <a href="#courses">קורסים</a>
-      <a href="#about">על הרב</a>
-      <a href="#testimonials">המלצות</a>
-      <a href="מאמרים/index.html">מאמרים</a>
-      <a href="#contact">צור קשר</a>
-    </nav>
-    <div class="footer-contact">
-      <a href="https://www.youtube.com/@omstam-" target="_blank" rel="noopener" class="footer-action footer-youtube" aria-label="לערוץ היוטיוב של מכון אמנות הסת&quot;ם">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
-        <span>לערוץ היוטיוב</span>
-      </a>
-      <a href="https://wa.me/972534177677" target="_blank" rel="noopener" class="footer-action footer-whatsapp" aria-label="כתבו לנו בוואטסאפ">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.8 17.7L.5 23.5l6-1.6A11.8 11.8 0 1 0 20.5 3.5ZM12 21.1a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.1 9.1 0 1 1 12 21.1Zm5-6.8c-.3-.2-1.8-.9-2-.9s-.4-.2-.6.2-.7.9-.8 1.1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.3 8.3 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.2-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.4-.6-.4h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.7 1.1 2.9a10.4 10.4 0 0 0 4 3.6c.5.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.8-.7 2-1.4s.3-1.3.2-1.4-.2-.2-.5-.4Z"/></svg>
-        <span>כתבו לנו בוואטסאפ</span>
-      </a>
-    </div>
-  </div>
-  <p class="footer-copy">© <span id="year"></span> מכון אמנות הסת"ם — כל הזכויות שמורות</p>
-</footer>
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="wrap split-layout">
+        <figure class="teaching-image reveal"><img src="assets/img/site/teaching-live.webp" alt="הרב יוחאי אוחיון מלמד תלמידים ליד שולחנות כתיבה"></figure>
+        <div class="method-copy reveal">
+          <p class="eyebrow">למה ללמוד אצל הרב אוחיון</p>
+          <h2 id="method-title">כאן לא באים רק ללמוד לכתוב.<br>באים כדי לצאת סופרים ברמה גבוהה.</h2>
+          <ul class="benefits-list">
+            <li>לימוד כתב ספרדי הלכתי, מדויק, יפה וזורם.</li>
+            <li>שיטת הרב אוחיון — נולדה מתוך שנים של כתיבה, הוראה ומחקר הכתב הספרדי.</li>
+            <li>קבוצה קטנה של שישה תלמידים בלבד, עם ליווי אישי ותיקון מדויק לכל תלמיד.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<script src="scripts/main.js"></script>
+    <section class="course-section" id="course" aria-labelledby="course-title">
+      <div class="wrap course-layout">
+        <div class="course-copy reveal">
+          <p class="eyebrow">מה מקבלים בקורס</p>
+          <h2 id="course-title">מסלול מעשי, ממוקד וברור</h2>
+          <p>לימוד שיטתי של האותיות, שיעורי הלכה, תרגול מעשי, חומרי לימוד עם תרשימים, ציוד מלא לקורס — ושולחן סופרים נייד מתנה.</p>
+        </div>
+        <figure class="space-image reveal"><img src="assets/img/site/institute-space.webp" alt="חלל הלימוד של מכון אמנות הסת״ם"></figure>
+      </div>
+    </section>
+
+    <section class="evening-section" id="evening-class" aria-labelledby="evening-title">
+      <div class="wrap evening-layout">
+        <div class="evening-copy reveal">
+          <p class="eyebrow">המחזור הקרוב</p>
+          <h2 id="evening-title">מחזור ערב קרוב</h2>
+          <p>מספר המקומות מוגבל. בדיקת התאמה קצרה תוודא שהמסלול נכון עבורך.</p>
+          <a class="btn btn-primary" href="https://wa.me/972534177677?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%94%D7%A8%D7%91%20%D7%99%D7%95%D7%97%D7%90%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D." target="_blank" rel="noopener">אני רוצה לבדוק התאמה לקורס</a>
+        </div>
+        <div class="class-times reveal" aria-label="מועדי הקבוצות">
+          <div><strong>קבוצה א׳</strong><span>19:00–21:00</span></div>
+          <div><strong>קבוצה ב׳</strong><span>21:00–23:00</span></div>
+          <p>שישה תלמידים בלבד בכל קבוצה</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="wrap closing-layout">
+        <figure class="closing-image reveal"><img src="assets/img/site/ancient-manuscript.webp" alt="תקריב כתב עברי על קלף"></figure>
+        <div class="closing-copy reveal">
+          <p class="eyebrow">הצעד הראשון</p>
+          <h2 id="closing-title">אם אתה רוצה להיות סופר סת״ם מהשורה הראשונה — זה הזמן והמקום להתחיל.</h2>
+          <p>לפנייה אישית, בדיקת התאמה ופרטים על המחזור הקרוב.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/972534177677?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%94%D7%A8%D7%91%20%D7%99%D7%95%D7%97%D7%90%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%A7%D7%95%D7%A8%D7%A1." target="_blank" rel="noopener">הודעה לוואטסאפ</a>
+            <a class="btn btn-secondary" href="mailto:Y0548431060@gmail.com?subject=%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%9B%D7%AA%D7%99%D7%91%D7%AA%20%D7%A1%D7%AA%D7%B4%D7%9D">שלח הודעה למייל</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand"><img src="assets/img/brand/logo-omanut-hastam.webp" alt="" class="brand-logo"><span>מכון אמנות הסת״ם</span></div>
+      <a href="https://www.youtube.com/@omstam-" target="_blank" rel="noopener">לערוץ היוטיוב</a>
+      <a href="tel:0534177677">053-4177677</a>
+    </div>
+    <p>© <span id="year"></span> מכון אמנות הסת״ם</p>
+  </footer>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

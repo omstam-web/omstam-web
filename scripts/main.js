@@ -34,35 +34,3 @@ document.querySelectorAll('.video-frame[data-youtube-id]').forEach(frame => {
     frame.replaceChildren(iframe);
   }, { once: true });
 });
-
-const contactForm = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = contactForm.querySelector('.form-submit');
-    submitBtn.disabled = true;
-    formStatus.textContent = 'שולח...';
-    formStatus.className = 'form-status';
-
-    try {
-      const res = await fetch('/contact-handler.php', {
-        method: 'POST',
-        body: new FormData(contactForm),
-      });
-      const data = await res.json();
-      if (data.ok) {
-        formStatus.textContent = 'הפנייה נשלחה בהצלחה! נחזור אליך בהקדם.';
-        formStatus.classList.add('ok');
-        contactForm.reset();
-      } else {
-        throw new Error(data.error || 'unknown');
-      }
-    } catch (err) {
-      formStatus.textContent = 'לא הצלחנו לשלוח את הטופס. אפשר לשלוח בוואטסאפ במקום.';
-      formStatus.classList.add('error');
-    } finally {
-      submitBtn.disabled = false;
-    }
-  });
-}
