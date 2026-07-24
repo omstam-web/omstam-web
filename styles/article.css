@@ -330,6 +330,7 @@ body.article-body { background: var(--parchment); }
 .download-guides h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
 .download-guides p:not(.section-eyebrow) { margin: 0 auto 22px; color: #5b4c3e; }
 .category-results { scroll-margin-top: 92px; }
+.category-results[hidden] { display: none !important; }
 .results-heading { text-align: center; margin: 0 0 28px; }
 .results-heading h2 { font-size: clamp(2rem, 4vw, 3rem); }
 .article-index-card[hidden] { display: none !important; }
