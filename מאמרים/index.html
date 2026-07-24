@@ -79,19 +79,13 @@
         <p>כתבי־יד עתיקים, כתר ארם צובא, מסורות כתיבה, חכמי הסת״ם והתפתחות הכתב לאורך הדורות.</p>
         <strong>לכל המאמרים בקטגוריה</strong>
       </a>
-      <a class="category-card category-downloads" href="#מדריכים-להורדה">
+      <a class="category-card category-downloads" href="mailto:Y0548431060@gmail.com?subject=הצטרפות%20לניוזלטר%20וקבלת%20המדריכים&body=שלום%20הרב%20יוחאי%2C%20אשמח%20להצטרף%20לניוזלטר%20ולקבל%20גישה%20למדריכים.">
         <span class="category-number">ו׳</span><h2>מדריכים להורדה</h2>
         <p>הצטרף עכשיו לניוזלטר השבועי, וקבל גישה ללא עלות להורדת מדריכים מקצועיים לסופרים, למגיהים ולסוגרי תפילין.</p>
         <strong>לצפייה במדריכים</strong>
       </a>
     </nav>
-    <section class="download-guides" id="מדריכים-להורדה">
-      <p class="section-eyebrow">תוכן מקצועי לשמירה ולעבודה</p>
-      <h2>מדריכים להורדה</h2>
-      <p>הצטרף לניוזלטר השבועי וקבל גישה ללא עלות למדריכים המקצועיים.</p>
-      <a class="btn btn-gold" href="mailto:Y0548431060@gmail.com?subject=הצטרפות%20לניוזלטר%20וקבלת%20המדריכים&body=שלום%20הרב%20יוחאי%2C%20אשמח%20להצטרף%20לניוזלטר%20ולקבל%20גישה%20למדריכים.">להצטרפות ולקבלת המדריכים</a>
-    </section>
-    <section class="category-results" id="מאמרי-הקטגוריה">
+    <section class="category-results" id="מאמרי-הקטגוריה" hidden>
       <div class="results-heading">
         <p class="section-eyebrow">המאמרים בספרייה</p>
         <h2 id="results-title">כל המאמרים</h2>
@@ -327,6 +321,7 @@
     const params = new URLSearchParams(location.search);
     const selected = params.get('נושא');
     if (selected && categories.some(([id]) => id === selected)) {
+      document.getElementById('מאמרי-הקטגוריה').hidden = false;
       const title = categories.find(([id]) => id === selected)[1];
       document.getElementById('results-title').textContent = title;
       cards.forEach(card => card.hidden = card.dataset.category !== selected);
