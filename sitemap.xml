@@ -71,11 +71,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omstam.com/קורס-כתיבת-סתם/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://omstam.com/שיפור-הכתב-יופי-הכתב-קיצור-זמן-הכתיבה/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -206,26 +201,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omstam.com/דף-הקורסים/קורס-סופר/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/דף-הקורסים/קורס-סופרי-סת״ם/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/דף-הקורסים/קורס-מכניסי-פרשיות/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/דף-הקורסים/רישום-לקורס-מכניסי-פרשיות-שיפוץ-תפילי/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://omstam.com/שיעור-מיוחד/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -237,11 +212,6 @@
   </url>
   <url>
     <loc>https://omstam.com/לימוד-כתיבת-סתם-כל-השלבים-הכלים-והדג/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/דף-הקורסים/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
