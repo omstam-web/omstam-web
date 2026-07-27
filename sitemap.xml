@@ -186,27 +186,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omstam.com/the-lectures-page/הרצאות/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/שיעורים-בנושאים-שונים/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://omstam.com/צרו-קשר/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/שיעור-מיוחד/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omstam.com/the-lectures-page/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
