@@ -1,3 +1,14 @@
+const GA_MEASUREMENT_ID = 'G-8GQR21S72Y';
+window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+window.gtag('js', new Date());
+window.gtag('config', GA_MEASUREMENT_ID, { send_page_view: true });
+
+const analyticsScript = document.createElement('script');
+analyticsScript.async = true;
+analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+document.head.appendChild(analyticsScript);
+
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
