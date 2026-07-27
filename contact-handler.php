@@ -27,7 +27,7 @@ $name = trim(strip_tags($_POST['name'] ?? ''));
 $phone = trim(strip_tags($_POST['phone'] ?? ''));
 $email = trim(strip_tags($_POST['email'] ?? ''));
 $message = trim(strip_tags($_POST['message'] ?? ''));
-$campaignFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid'];
+$campaignFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid'];
 $campaign = [];
 foreach ($campaignFields as $field) {
     $campaign[$field] = trim(strip_tags($_POST[$field] ?? ''));
@@ -52,7 +52,9 @@ $body = "פנייה חדשה מטופס יצירת הקשר באתר מכון א
     . "campaign: " . ($campaign['utm_campaign'] ?: '-') . "\n"
     . "content: " . ($campaign['utm_content'] ?: '-') . "\n"
     . "term: " . ($campaign['utm_term'] ?: '-') . "\n"
-    . "gclid: " . ($campaign['gclid'] ?: '-') . "\n";
+    . "gclid: " . ($campaign['gclid'] ?: '-') . "\n"
+    . "gbraid: " . ($campaign['gbraid'] ?: '-') . "\n"
+    . "wbraid: " . ($campaign['wbraid'] ?: '-') . "\n";
 
 $headers = 'From: ' . OMSTAM_SITE_NAME . ' <' . OMSTAM_FROM_EMAIL . ">\r\n"
     . 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
