@@ -139,3 +139,164 @@
   .home-course .video-play { width: 130px; height: 130px; }
   .home-course .class-times { grid-template-columns: 1fr; padding: 18px; border-radius: 12px 54px 12px 54px; }
 }
+
+
+/* Moroccan hero gateway — strong opening, restrained continuation. */
+.home-course .hero {
+  border-block: 10px solid #b56532;
+  background: #ead2a5;
+}
+.home-course .hero::before {
+  z-index: 3;
+  inset: 12px;
+  width: auto;
+  height: auto;
+  border: 3px solid #b58a3d;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 6px #f6e7c8, inset 0 0 0 8px rgba(181,101,50,.72);
+  pointer-events: none;
+}
+.home-course .hero::after {
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 22px;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(20px 16px at 20px 0, transparent 60%, #a9552e 62% 70%, transparent 72%) 0 0/40px 22px repeat-x,
+    linear-gradient(90deg,#b58a3d,#e6c982,#b58a3d);
+  opacity: .96;
+}
+.home-course .hero-grid {
+  max-width: 1440px;
+  padding: 30px;
+  gap: 0;
+  background: #f8edda;
+}
+.home-course .hero-copy {
+  position: relative;
+  z-index: 2;
+  margin: 32px 0 32px 28px;
+  padding: 132px clamp(34px,5vw,78px) 74px;
+  overflow: hidden;
+  border: 5px solid #d4b06b;
+  border-left: 0;
+  border-radius: 240px 240px 0 0;
+  background:
+    radial-gradient(circle at 50% 0, rgba(255,255,255,.9), transparent 38%),
+    linear-gradient(180deg,#fffaf0 0%,#f7e7c8 100%);
+  box-shadow:
+    inset 0 0 0 7px #f4dcae,
+    inset 0 0 0 9px rgba(165,85,46,.38),
+    0 18px 40px rgba(88,57,30,.18);
+  text-align: center;
+  align-items: center;
+}
+.home-course .hero-copy::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 14%;
+  left: 14%;
+  height: 18px;
+  border-block: 2px solid rgba(181,138,61,.72);
+  background: radial-gradient(circle,#a9552e 0 4px,#d7b36b 5px 8px,transparent 9px) center/54px 18px repeat-x;
+}
+.home-course .hero-copy::after {
+  content: "";
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  bottom: 28px;
+  height: 5px;
+  border-block: 1px solid rgba(181,138,61,.7);
+  background: #b56532;
+}
+.home-course .hero .eyebrow {
+  color: #7a5b2d;
+  font-size: .96rem;
+  letter-spacing: .08em;
+}
+.home-course .hero h1 {
+  max-width: 720px;
+  color: #9b6818;
+  font-family: "Frank Ruhl Libre","David Libre",David,serif;
+  font-size: clamp(3rem,5.4vw,5.4rem);
+  font-weight: 900;
+  line-height: 1.03;
+  text-shadow: 0 2px 0 #fff8e8;
+}
+.home-course .hero-lead {
+  color: #4f5631;
+  font-family: "Frank Ruhl Libre","David Libre",David,serif;
+  font-size: clamp(1.25rem,2vw,1.62rem);
+}
+.home-course .hero-text {
+  max-width: 620px;
+  color: #4f5631;
+  font-size: 1.14rem;
+}
+.home-course .hero-actions { justify-content: center; }
+.home-course .hero .btn-primary {
+  min-width: 220px;
+  color: #fffaf0;
+  background: #b65d31;
+  border: 2px solid #d3a34e;
+  border-radius: 7px;
+  box-shadow: 0 0 0 3px #f1d99c,0 9px 20px rgba(111,62,31,.24);
+}
+.home-course .hero .btn-secondary {
+  border-color: #b58a3d;
+  border-radius: 7px;
+  background: #fff9ed;
+}
+.home-course .hero-trust {
+  position: relative;
+  z-index: 1;
+  margin: 34px 0 0;
+  padding-bottom: 22px;
+  color: #4f5631;
+  font-family: "Frank Ruhl Libre","David Libre",David,serif;
+  font-weight: 700;
+}
+.home-course .hero-trust span { margin: 0 9px; color: #b56532; }
+.home-course .hero-image {
+  margin: 32px 28px 32px 0;
+  min-height: 650px;
+  border: 5px solid #d4b06b;
+  border-right: 0;
+  box-shadow: inset 0 0 0 7px rgba(248,231,196,.7),0 18px 40px rgba(88,57,30,.18);
+  background-position: center 23%;
+}
+.home-course .trust-strip { border-top: 0; }
+
+@media (max-width: 820px) {
+  .home-course .hero { border-block-width: 7px; }
+  .home-course .hero-grid { padding: 20px; }
+  .home-course .hero-copy {
+    order: 2;
+    margin: 0;
+    padding: 92px 24px 62px;
+    border: 4px solid #d4b06b;
+    border-top: 0;
+    border-radius: 0;
+  }
+  .home-course .hero-image {
+    order: 1;
+    min-height: 460px;
+    margin: 0;
+    border: 4px solid #d4b06b;
+    border-bottom: 0;
+    background-position: center 24%;
+  }
+  .home-course .hero h1 { font-size: clamp(2.8rem,12vw,4.25rem); }
+}
+@media (max-width: 520px) {
+  .home-course .hero-grid { padding: 13px; }
+  .home-course .hero-image { min-height: 390px; }
+  .home-course .hero-copy { padding: 82px 20px 56px; }
+  .home-course .hero-trust span { margin: 0 4px; }
+}
