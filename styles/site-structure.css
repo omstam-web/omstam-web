@@ -194,6 +194,10 @@
 .lesson-note h3 { margin-top: 0; color: var(--burgundy); }
 .lesson-note ul { margin: 0; padding-right: 22px; }
 .lesson-note li { margin: 10px 0; }
+.legal-content { max-width: 860px; }
+.legal-content h2 { margin-top: 34px; color: var(--burgundy); }
+.legal-content p, .legal-content li { line-height: 1.85; }
+.legal-content a { color: var(--burgundy); text-decoration: underline; text-underline-offset: 3px; }
 .improvement-result { text-align: center; }
 .result-heading { max-width: 760px; margin: 0 auto 30px; }
 .result-heading p:last-child { margin: 0; color: #5b4c3e; }
