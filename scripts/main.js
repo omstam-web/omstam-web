@@ -25,7 +25,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => observer.observe(el));
 
-const campaignParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid'];
+const campaignParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid'];
 const currentParams = new URLSearchParams(window.location.search);
 const campaignData = {};
 campaignParams.forEach((key) => {
