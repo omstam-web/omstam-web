@@ -266,10 +266,28 @@
 .home-course .hero-image {
   margin: 32px 28px 32px 0;
   min-height: 650px;
+  position: relative;
+  overflow: hidden;
   border: 5px solid #d4b06b;
   border-right: 0;
   box-shadow: inset 0 0 0 7px rgba(248,231,196,.7),0 18px 40px rgba(88,57,30,.18);
-  background-position: center 23%;
+  background: #d8bd8a;
+}
+.home-course .hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  object-fit: cover;
+  object-position: center 23%;
+}
+.home-course .hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 8px solid rgba(248,231,196,.76);
+  box-shadow: inset 0 0 0 2px rgba(165,85,46,.7);
+  pointer-events: none;
 }
 .home-course .trust-strip { border-top: 0; }
 
@@ -290,13 +308,17 @@
     margin: 0;
     border: 4px solid #d4b06b;
     border-bottom: 0;
-    background-position: center 24%;
+  }
+  .home-course .hero-image img {
+    min-height: 460px;
+    object-position: center 24%;
   }
   .home-course .hero h1 { font-size: clamp(2.8rem,12vw,4.25rem); }
 }
 @media (max-width: 520px) {
   .home-course .hero-grid { padding: 13px; }
-  .home-course .hero-image { min-height: 390px; }
+  .home-course .hero-image,
+  .home-course .hero-image img { min-height: 390px; }
   .home-course .hero-copy { padding: 82px 20px 56px; }
   .home-course .hero-trust span { margin: 0 4px; }
 }
