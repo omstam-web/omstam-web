@@ -1,0 +1,81 @@
+.course-landing {
+  --ink: #3e3025;
+  --brown: #5b4330;
+  --gold: #b68a3b;
+  --cream: #f7f0e3;
+  --paper: #fffdf8;
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Assistant, Arial, sans-serif;
+  line-height: 1.7;
+}
+.course-landing *, .course-landing *::before, .course-landing *::after { box-sizing: border-box; }
+.course-landing h1, .course-landing h2, .course-landing h3, .course-landing .landing-btn { font-family: "Frank Ruhl Libre", David, serif; }
+.landing-wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+.landing-top { min-height: 700px; display: grid; grid-template-columns: 1.03fr .97fr; background: var(--paper); }
+.landing-top-copy { display: flex; flex-direction: column; justify-content: center; padding: 80px max(32px, 6vw); }
+.landing-logo { width: 106px; height: 106px; object-fit: contain; margin-bottom: 24px; border-radius: 50%; }
+.landing-kicker { margin: 0 0 10px; color: var(--gold); font-weight: 800; letter-spacing: .05em; }
+.course-landing h1 { margin: 0; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.03; }
+.landing-lead { max-width: 650px; margin: 20px 0; color: #5a493b; font-size: 1.25rem; }
+.landing-points { display: flex; flex-wrap: wrap; gap: 9px; margin: 6px 0 28px; }
+.landing-points span { padding: 8px 14px; border: 1px solid rgba(182,138,59,.55); border-radius: 999px; background: #fbf4e8; font-weight: 700; }
+.landing-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; width: fit-content; padding: 13px 30px; border: 0; border-radius: 4px 4px 22px 4px; color: #fff; background: var(--brown); font-size: 1.13rem; font-weight: 800; text-decoration: none; cursor: pointer; }
+.landing-top-image { min-height: 700px; background: linear-gradient(90deg, rgba(255,253,248,.16), transparent 30%), url("../assets/img/hero/rav-escribiendo-sefer-torah.webp") center 24% / cover no-repeat; }
+.landing-proof { padding: 25px 0; background: var(--brown); color: #fffaf0; }
+.landing-proof-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; text-align: center; }
+.landing-proof strong { display: block; color: #e4c985; font: 800 1.45rem "Frank Ruhl Libre", David, serif; }
+.landing-section { padding: 85px 0; }
+.landing-section h2 { max-width: 770px; margin: 0 auto 18px; text-align: center; font-size: clamp(2.15rem,4vw,3.4rem); line-height: 1.13; }
+.landing-center { max-width: 760px; margin: 0 auto 34px; text-align: center; font-size: 1.12rem; }
+.landing-method { background: var(--paper); }
+.landing-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.landing-card { padding: 30px; border: 1px solid rgba(182,138,59,.45); border-radius: 5px 60px 5px 5px; background: #fbf5e9; }
+.landing-card b { color: var(--gold); font-size: 1.4rem; }
+.landing-card h3 { margin: 8px 0; font-size: 1.55rem; }
+.landing-gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; }
+.landing-gallery img { width: 100%; height: 310px; object-fit: cover; border-radius: 4px 42px 4px 4px; border: 1px solid rgba(182,138,59,.4); background: #fff; }
+.landing-details { background: var(--paper); }
+.landing-details-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 55px; align-items: center; }
+.landing-details h2 { margin-inline: 0; text-align: right; }
+.landing-list { padding: 0; list-style: none; }
+.landing-list li { position: relative; padding: 7px 28px 7px 0; }
+.landing-list li::before { content: ""; position: absolute; right: 0; top: 1.05em; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+.landing-schedule { padding: 35px; border: 1px solid rgba(182,138,59,.55); border-radius: 4px 70px 4px 70px; background: #f8efdf; box-shadow: 0 18px 40px rgba(76,54,32,.12); }
+.landing-schedule strong, .landing-schedule span { display: block; }
+.landing-schedule strong { font: 800 1.8rem "Frank Ruhl Libre", David, serif; }
+.landing-form-section { background: var(--brown); color: #fffaf0; }
+.landing-form-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; }
+.landing-form-section h2 { margin-inline: 0; color: #fff; text-align: right; }
+.landing-form { display: grid; gap: 13px; padding: 30px; border-radius: 5px 60px 5px 5px; background: var(--paper); color: var(--ink); }
+.landing-form label { font-weight: 700; }
+.landing-form input, .landing-form select { width: 100%; min-height: 49px; margin-top: 5px; padding: 9px 12px; border: 1px solid #cdbb9d; border-radius: 5px; background: #fff; font: inherit; }
+.landing-form .form-submit { width: 100%; background: var(--gold); color: #2e251d; }
+.landing-form .form-status { min-height: 24px; margin: 0; font-weight: 700; }
+.landing-form .form-status.ok { color: #18733c; }
+.landing-form .form-status.error { color: #a12727; }
+.landing-honeypot { position: absolute; left: -10000px; }
+.landing-alt { margin-top: 18px; }
+.landing-alt a { color: #f0d58d; font-weight: 800; }
+.landing-footer { padding: 22px; background: #30241c; color: #eadfcf; text-align: center; }
+.landing-mobile-cta { display: none; }
+@media (max-width: 800px) {
+  .landing-top { grid-template-columns: 1fr; }
+  .landing-top-copy { padding: 52px 24px; }
+  .landing-top-image { min-height: 430px; grid-row: 1; }
+  .landing-proof-grid { grid-template-columns: 1fr 1fr; }
+  .landing-cards, .landing-details-grid, .landing-form-grid { grid-template-columns: 1fr; }
+  .landing-gallery { grid-template-columns: 1fr 1fr; }
+  .landing-gallery img:first-child { grid-column: 1/-1; }
+  .landing-mobile-cta { position: fixed; z-index: 50; display: block; right: 12px; left: 12px; bottom: 10px; padding: 13px; border-radius: 14px; background: var(--gold); color: #2e251d; box-shadow: 0 12px 28px rgba(40,29,20,.28); text-align: center; text-decoration: none; font-weight: 900; }
+  .landing-footer { padding-bottom: 82px; }
+}
+@media (max-width: 520px) {
+  .landing-wrap { width: min(100% - 30px,1120px); }
+  .course-landing h1 { font-size: 3.1rem; }
+  .landing-btn { width: 100%; }
+  .landing-section { padding: 62px 0; }
+  .landing-gallery { grid-template-columns: 1fr; }
+  .landing-gallery img:first-child { grid-column: auto; }
+}
