@@ -630,3 +630,90 @@ section { padding: 92px 0; }
   .gallery-item, .gallery-item:first-child { height: 255px; }
   section { padding: 64px 0; }
 }
+
+
+/* ---------- Gentle Moroccan section ornaments ---------- */
+/*
+  A quiet continuation of the approved homepage opening:
+  ornamental framing only. Existing page colours, typography and content stay intact.
+*/
+:where(.home-course, .site-structure-page, .article-body, .letters-page)
+main > section:not(.hero) > .wrap {
+  position: relative;
+  isolation: isolate;
+}
+
+:where(.home-course, .site-structure-page, .article-body, .letters-page)
+main > section:not(.hero) > .wrap::before,
+:where(.home-course, .site-structure-page, .article-body, .letters-page)
+main > section:not(.hero) > .wrap::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 74px;
+  height: 54px;
+  pointer-events: none;
+  opacity: .58;
+  background-repeat: no-repeat;
+}
+
+:where(.home-course, .site-structure-page, .article-body, .letters-page)
+main > section:not(.hero) > .wrap::before {
+  top: 12px;
+  right: 12px;
+  border-top: 1px solid rgba(181, 138, 61, .52);
+  border-right: 1px solid rgba(181, 138, 61, .52);
+  border-radius: 0 18px 0 0;
+  background:
+    radial-gradient(circle at 100% 0,
+      transparent 0 17px,
+      rgba(181, 138, 61, .42) 17.5px 18.5px,
+      transparent 19px 29px,
+      rgba(181, 138, 61, .25) 29.5px 30.5px,
+      transparent 31px);
+}
+
+:where(.home-course, .site-structure-page, .article-body, .letters-page)
+main > section:not(.hero) > .wrap::after {
+  bottom: 12px;
+  left: 12px;
+  border-bottom: 1px solid rgba(181, 138, 61, .52);
+  border-left: 1px solid rgba(181, 138, 61, .52);
+  border-radius: 0 0 0 18px;
+  background:
+    radial-gradient(circle at 0 100%,
+      transparent 0 17px,
+      rgba(181, 138, 61, .42) 17.5px 18.5px,
+      transparent 19px 29px,
+      rgba(181, 138, 61, .25) 29.5px 30.5px,
+      transparent 31px);
+}
+
+:where(.home-course, .site-structure-page, .article-body, .letters-page)
+main > section:not(.hero) > .wrap > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 720px) {
+  :where(.home-course, .site-structure-page, .article-body, .letters-page)
+  main > section:not(.hero) > .wrap::before,
+  :where(.home-course, .site-structure-page, .article-body, .letters-page)
+  main > section:not(.hero) > .wrap::after {
+    width: 52px;
+    height: 40px;
+    opacity: .46;
+  }
+
+  :where(.home-course, .site-structure-page, .article-body, .letters-page)
+  main > section:not(.hero) > .wrap::before {
+    top: 7px;
+    right: 7px;
+  }
+
+  :where(.home-course, .site-structure-page, .article-body, .letters-page)
+  main > section:not(.hero) > .wrap::after {
+    bottom: 7px;
+    left: 7px;
+  }
+}
