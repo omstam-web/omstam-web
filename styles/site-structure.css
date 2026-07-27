@@ -209,3 +209,15 @@
   .contact-actions .btn { width: 100%; text-align: center; }
   .training-grid { grid-template-columns: 1fr; }
 }
+
+/* Lightweight contextual YouTube video */
+.context-video { max-width: 900px; margin: 42px auto; padding: clamp(18px, 3vw, 28px); background: linear-gradient(145deg, #fffdf8, #f3e7d3); border: 1px solid rgba(181,138,61,.36); border-radius: 38px 38px 14px 14px; box-shadow: 0 14px 34px rgba(48,42,38,.09); }
+.context-video-copy { margin-bottom: 18px; text-align: center; }
+.context-video-copy h2 { margin-bottom: 8px; }
+.context-video-copy p { margin: 0 auto; max-width: 720px; color: #5b4c3e; }
+.context-video .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 26px 26px 10px 10px; background: #2f2822; }
+.context-video .video-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.context-video .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.context-video .video-play { position: absolute; inset: 0; width: 100%; border: 0; display: grid; place-items: center; align-content: center; gap: 10px; cursor: pointer; color: #fff; font: inherit; font-size: 1.1rem; font-weight: 700; background: linear-gradient(180deg, transparent 25%, rgba(32,25,20,.78)); }
+.context-video .video-play span { display: grid; place-items: center; width: 64px; height: 64px; padding-right: 4px; border-radius: 50%; color: #2d241c; background: #d8b765; box-shadow: 0 10px 28px rgba(0,0,0,.25); }
+@media (max-width: 620px) { .context-video { margin: 30px auto; padding: 14px; border-radius: 28px 28px 12px 12px; } .context-video .video-play { font-size: 1rem; } .context-video .video-play span { width: 54px; height: 54px; } }
