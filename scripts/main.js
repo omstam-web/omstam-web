@@ -58,7 +58,7 @@ function trackEvent(name, parameters = {}) {
    The phone number stays visible; WhatsApp remains an understated icon. */
 const contactDockStyles = document.createElement('link');
 contactDockStyles.rel = 'stylesheet';
-contactDockStyles.href = '/styles/contact-dock.css';
+contactDockStyles.href = '/styles/contact-dock.css?v=20260728c';
 document.head.appendChild(contactDockStyles);
 
 const contactDock = document.createElement('aside');
