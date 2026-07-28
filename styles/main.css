@@ -32,6 +32,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.page-hero-author,.course-hero-author,.letters-hero-author{display:flex;flex-direction:column;gap:3px;margin:18px 0;color:#6b4a2d}
+.page-hero-author strong,.course-hero-author strong,.letters-hero-author strong{font-family:"Frank Ruhl Libre",serif;font-size:clamp(1.35rem,2.2vw,1.9rem);color:#9b6818}
+.page-hero-author span,.course-hero-author span,.letters-hero-author span{font-weight:600}
+
 img { max-width: 100%; display: block; }
 
 .wrap {

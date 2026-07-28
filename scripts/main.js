@@ -54,7 +54,15 @@ function trackEvent(name, parameters = {}) {
   if (typeof window.gtag === 'function') window.gtag('event', name, payload);
 }
 
-document.querySelectorAll('a[href*="wa.me"], a[href^="tel:"], a[href^="mailto:"]').forEach((link) => {
+const contactLinks = document.querySelectorAll('a[href*="wa.me"], a[href^="tel:"], a[href^="mailto:"]');
+
+contactLinks.forEach((link) => {
+  if (link.href.includes('wa.me') && !/וואטסאפ|ווטסאפ/i.test(link.textContent)) {
+    link.textContent = /התאמה/i.test(link.textContent)
+      ? 'שליחת הודעה בוואטסאפ לבדיקת התאמה'
+      : 'שליחת הודעה בוואטסאפ';
+  }
+
   link.addEventListener('click', () => {
     const channel = link.href.includes('wa.me') ? 'whatsapp' : link.href.startsWith('tel:') ? 'phone' : 'email';
     trackEvent('omstam_contact_click', {
@@ -63,6 +71,21 @@ document.querySelectorAll('a[href*="wa.me"], a[href^="tel:"], a[href^="mailto:"]
       page_path: window.location.pathname,
     });
   });
+});
+
+document.querySelectorAll('.hero-actions, .contact-actions, .final-actions, .landing-actions, .mobile-contact, .landing-mobile-cta').forEach((group) => {
+  const directContactLinks = [...group.children].filter((child) =>
+    child.matches?.('a[href*="wa.me"], a[href^="tel:"], a[href^="mailto:"]')
+  );
+  if (directContactLinks.length < 2) return;
+
+  const contactPriority = (link) => {
+    if (link.href.startsWith('tel:')) return 1;
+    if (link.href.startsWith('mailto:')) return 2;
+    return 3;
+  };
+  directContactLinks.sort((a, b) => contactPriority(a) - contactPriority(b));
+  directContactLinks.forEach((link) => group.appendChild(link));
 });
 
 document.querySelectorAll('form[data-campaign-form]').forEach((form) => {
@@ -113,7 +136,7 @@ if (contactForm) {
         throw new Error(data.error || 'unknown');
       }
     } catch (err) {
-      formStatus.textContent = 'לא הצלחנו לשלוח את הטופס. אפשר לשלוח בוואטסאפ במקום.';
+      formStatus.textContent = 'לא הצלחנו לשלוח את הטופס. אפשר להתקשר, לשלוח מייל או לשלוח הודעה בוואטסאפ.';
       formStatus.classList.add('error');
     } finally {
       submitBtn.disabled = false;
