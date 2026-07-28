@@ -54,6 +54,35 @@ function trackEvent(name, parameters = {}) {
   if (typeof window.gtag === 'function') window.gtag('event', name, payload);
 }
 
+/* A single, persistent contact path on every page.
+   The phone number stays visible; WhatsApp remains an understated icon. */
+const contactDockStyles = document.createElement('link');
+contactDockStyles.rel = 'stylesheet';
+contactDockStyles.href = '/styles/contact-dock.css';
+document.head.appendChild(contactDockStyles);
+
+const contactDock = document.createElement('aside');
+contactDock.className = 'site-contact-dock';
+contactDock.setAttribute('aria-label', 'דרכי יצירת קשר עם הרב יוחאי אוחיון');
+contactDock.innerHTML = `
+  <div class="site-contact-dock__inner">
+    <span class="site-contact-dock__label">לבירור והתאמה לקורס:</span>
+    <a class="site-contact-dock__phone" href="tel:0534177677">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 1.3C10.4 21.9 2.1 13.6 2.1 3.3 2.1 2.6 2.7 2 3.4 2h3.5c.7 0 1.3.6 1.3 1.3 0 1.4.3 2.8.8 4.1.1.4.1.9-.2 1.2l-2.2 2.2Z"/></svg>
+      <span>להתקשר</span>
+      <bdi>053-4177677</bdi>
+    </a>
+    <a class="site-contact-dock__email" href="mailto:Y0548431060@gmail.com">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 7.1L20.2 7H3.8l8.2 5.1Zm0 2.3L3 8.8V17h18V8.8l-9 5.6Z"/></svg>
+      <span>לשלוח מייל</span>
+    </a>
+    <a class="site-contact-dock__whatsapp" href="https://wa.me/972534177677" aria-label="שליחת הודעה בוואטסאפ" title="שליחת הודעה בוואטסאפ">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 4.5A11.4 11.4 0 0 0 6.2 21.66L4.7 27.5l5.98-1.45A11.4 11.4 0 1 0 16.04 4.5Zm0 20.73c-1.8 0-3.55-.52-5.05-1.5l-.36-.22-3.55.86.9-3.45-.24-.36A9.29 9.29 0 1 1 16.04 25.23Zm5.1-6.96c-.28-.14-1.66-.82-1.91-.91-.26-.1-.45-.14-.64.14-.18.28-.72.91-.88 1.1-.16.18-.33.2-.61.07-.28-.14-1.18-.44-2.25-1.39a8.43 8.43 0 0 1-1.56-1.94c-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.18.05-.35-.02-.49-.07-.14-.63-1.54-.87-2.1-.23-.55-.47-.48-.64-.49h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.71 1.14 2.9.14.18 1.97 3 4.77 4.21.67.29 1.19.46 1.59.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.34.23-.65.23-1.21.16-1.33-.07-.12-.25-.19-.53-.33Z"/></svg>
+    </a>
+  </div>`;
+document.body.appendChild(contactDock);
+document.body.classList.add('has-site-contact-dock');
+
 const contactLinks = document.querySelectorAll('a[href*="wa.me"], a[href^="tel:"], a[href^="mailto:"]');
 
 contactLinks.forEach((link) => {
