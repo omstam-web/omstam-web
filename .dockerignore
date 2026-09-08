@@ -1,0 +1,7 @@
+.git
+site-mirror
+private
+data
+ops
+scripts
+*.log
