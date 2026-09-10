@@ -88,6 +88,30 @@ body.article-body { background: var(--parchment); }
 .article-body-text a { color: var(--burgundy); text-decoration: underline; text-underline-offset: 2px; }
 .article-body-text img { border-radius: 10px; margin: 1.4em 0; box-shadow: var(--shadow); max-width: 100%; height: auto; }
 .article-body-text strong { color: var(--navy); }
+.article-intro {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--navy);
+  padding: 18px 22px;
+  border-right: 3px solid var(--gold);
+  background: linear-gradient(90deg, transparent, rgba(234, 215, 170, .28));
+}
+.article-hero-image img { width: 100%; }
+.article-highlight,
+.article-resource-box {
+  margin: 1.7em 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(182, 144, 63, .4);
+  border-radius: 22px 22px 8px 8px;
+  background: linear-gradient(145deg, #fffdf8, var(--parchment-2));
+  box-shadow: 0 10px 22px rgba(30, 48, 61, .07);
+}
+.article-highlight > strong { display: block; margin-bottom: 8px; color: var(--burgundy); font-family: var(--serif); font-size: 1.1rem; }
+.article-highlight p:last-child,
+.article-resource-box p:last-of-type { margin-bottom: 0; }
+.article-resource-box { text-align: center; }
+.article-resource-box h2 { margin-top: 0; }
 .extracted-figure {
   margin: 1.8em auto;
   text-align: center;
