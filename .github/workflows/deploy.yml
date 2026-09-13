@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.OMSTAM_DEPLOY_SSH_KEY }}
           script: |
             set -e
-            deploy
             echo "Deploy command: $(command -v deploy)"
             sed -n '1,200p' "$(command -v deploy)"
             docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Ports}}'
+            deploy
