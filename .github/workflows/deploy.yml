@@ -15,13 +15,3 @@ jobs:
           username: david
           key: ${{ secrets.OMSTAM_DEPLOY_SSH_KEY }}
           script: deploy
-      - name: Probe server management access
-        continue-on-error: true
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: 116.203.151.205
-          username: root
-          key: ${{ secrets.OMSTAM_DEPLOY_SSH_KEY }}
-          script: |
-            id
-            docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Ports}}'
