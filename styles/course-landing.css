@@ -81,6 +81,8 @@
 .landing-form .form-status.ok { color: #18733c; }
 .landing-form .form-status.error { color: #a12727; }
 .landing-honeypot { position: absolute; left: -10000px; }
+.course-landing .site-contact-dock { display: none; }
+.course-landing.has-site-contact-dock { padding-bottom: 0; }
 .landing-alt { margin-top: 18px; }
 .landing-alt a { color: #f0d58d; font-weight: 800; }
 .landing-footer { padding: 22px; background: #30241c; color: #eadfcf; text-align: center; }
