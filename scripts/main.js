@@ -100,7 +100,12 @@ contactLinks.forEach((link) => {
 
   link.addEventListener('click', () => {
     const channel = link.href.includes('wa.me') ? 'whatsapp' : link.href.startsWith('tel:') ? 'phone' : 'email';
-    trackEvent('omstam_contact_click', {
+    const eventName = {
+      whatsapp: 'whatsapp_click',
+      phone: 'phone_click',
+      email: 'email_click',
+    }[channel];
+    trackEvent(eventName, {
       contact_channel: channel,
       link_text: link.textContent.trim(),
       page_path: window.location.pathname,
