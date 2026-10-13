@@ -100,7 +100,9 @@ pipeline {
                     hasBuildableChanges = files.any {
                         !(it.endsWith('.md') || it.startsWith('docs/'))
                     }
-                    addBuildText(hasBuildableChanges ? "build needed" : "docs only")
+                    // An empty/docs-only latest commit can follow a failed production build.
+                    // Always publish the current main/HF-* tree when this job runs.
+                    addBuildText(isDeployable ? "production build" : (hasBuildableChanges ? "build needed" : "docs only"))
                 }
             }
         } // Detect changes
@@ -125,7 +127,7 @@ pipeline {
         } // MR Scans
 
         stage('Build & Push Image') {
-            when { expression { !skipCi && isDeployable && hasBuildableChanges } }
+            when { expression { !skipCi && isDeployable } }
             steps {
                 script {
                     def dest = "--destination ${registry}/${image_name}:${version} " +
@@ -136,7 +138,7 @@ pipeline {
         } // Build & Push Image
 
         stage('Update IaC') {
-            when { expression { !skipCi && isDeployable && hasBuildableChanges } }
+            when { expression { !skipCi && isDeployable } }
             steps {
                 script {
                     checkoutRepo("${iac_repo_branch}", "da-iac", "${iac_repo_url}", "${iac_repo_cred_id}")
@@ -160,7 +162,7 @@ pipeline {
     post {
         success {
             script {
-                if (isDeployable && hasBuildableChanges) {
+                if (isDeployable && !skipCi) {
                     addBuildText("pushed: ${image_name} @ ${version}")
                 }
             }
