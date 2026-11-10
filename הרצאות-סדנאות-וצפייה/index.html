@@ -24,6 +24,9 @@
     .booking-actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .booking-actions .btn { padding: 10px 21px; font-size: .96rem; }
     .section-intro { max-width: 760px; margin-bottom: 30px; font-size: 1.08rem; color: #5b4c3e; }
+    .lecture-poster-section { padding-top: 34px; }
+    .lecture-poster-link { display: block; width: min(100%, 760px); margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 18px 42px rgba(48,42,38,.16); }
+    .lecture-poster { display: block; width: 100%; height: auto; }
     .lecture-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
     .lecture-photo { grid-column: span 4; margin: 0; overflow: hidden; background: var(--paper); border: 1px solid rgba(181,138,61,.36); border-radius: 34px 34px 12px 12px; box-shadow: 0 12px 28px rgba(48,42,38,.09); }
     .lecture-photo.featured { grid-column: span 6; }
@@ -89,6 +92,14 @@
         <div class="lectures-hero-image">
           <img src="../assets/img/lectures/netivot-olam-camp.webp" alt="הרב יוחאי אוחיון מרצה בקמפ של ישיבת נתיבות עולם" width="1600" height="1067">
         </div>
+      </div>
+    </section>
+
+    <section class="page-section lecture-poster-section" aria-label="הרצאת התפילין שלי למנהלים ולרכזים">
+      <div class="wrap">
+        <a class="lecture-poster-link" href="https://wa.me/972534177677" target="_blank" rel="noopener" aria-label="להזמנת הרצאת התפילין שלי">
+          <img class="lecture-poster" src="../assets/img/lectures/tefillin-lecture-managers.webp" alt="התפילין שלי — הרצאה חווייתית לתלמידים לקראת בר המצווה עם הרב יוחאי אוחיון" width="1122" height="1402">
+        </a>
       </div>
     </section>
 
