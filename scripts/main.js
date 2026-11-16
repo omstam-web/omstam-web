@@ -191,33 +191,13 @@ if (contactForm) {
 }
 
 
-/* Weekly newsletter invitation: Saturday night through Sunday morning (Israel time). */
+/* Site-wide newsletter invitation for every visitor, on every day. */
 (() => {
-  const PREVIEW_PARAM = 'newsletter';
   const DISMISSED_KEY = 'omstam_newsletter_dismissed_at';
   const SUBSCRIBED_KEY = 'omstam_newsletter_subscribed';
   const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
-  const israelNow = () => {
-    const parts = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'Asia/Jerusalem',
-      weekday: 'short',
-      hour: '2-digit',
-      hourCycle: 'h23',
-    }).formatToParts(new Date());
-    return {
-      weekday: parts.find(part => part.type === 'weekday')?.value,
-      hour: Number(parts.find(part => part.type === 'hour')?.value || 0),
-    };
-  };
-
-  const isNewsletterWindow = () => {
-    if (new URLSearchParams(window.location.search).get(PREVIEW_PARAM) === 'preview') return true;
-    const { weekday, hour } = israelNow();
-    return (weekday === 'Sat' && hour >= 20) || (weekday === 'Sun' && hour < 12);
-  };
-
-  if (!isNewsletterWindow() || localStorage.getItem(SUBSCRIBED_KEY) === '1') return;
+  if (localStorage.getItem(SUBSCRIBED_KEY) === '1') return;
   const dismissedAt = Number(localStorage.getItem(DISMISSED_KEY) || 0);
   if (Date.now() - dismissedAt < WEEK_MS) return;
 
