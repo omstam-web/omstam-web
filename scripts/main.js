@@ -189,3 +189,145 @@ if (contactForm) {
     }
   });
 }
+
+
+/* Weekly newsletter invitation: Saturday night through Sunday morning (Israel time). */
+(() => {
+  const PREVIEW_PARAM = 'newsletter';
+  const DISMISSED_KEY = 'omstam_newsletter_dismissed_at';
+  const SUBSCRIBED_KEY = 'omstam_newsletter_subscribed';
+  const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+
+  const israelNow = () => {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Jerusalem',
+      weekday: 'short',
+      hour: '2-digit',
+      hourCycle: 'h23',
+    }).formatToParts(new Date());
+    return {
+      weekday: parts.find(part => part.type === 'weekday')?.value,
+      hour: Number(parts.find(part => part.type === 'hour')?.value || 0),
+    };
+  };
+
+  const isNewsletterWindow = () => {
+    if (new URLSearchParams(window.location.search).get(PREVIEW_PARAM) === 'preview') return true;
+    const { weekday, hour } = israelNow();
+    return (weekday === 'Sat' && hour >= 20) || (weekday === 'Sun' && hour < 12);
+  };
+
+  if (!isNewsletterWindow() || localStorage.getItem(SUBSCRIBED_KEY) === '1') return;
+  const dismissedAt = Number(localStorage.getItem(DISMISSED_KEY) || 0);
+  if (Date.now() - dismissedAt < WEEK_MS) return;
+
+  const styles = document.createElement('style');
+  styles.textContent = `
+    .newsletter-modal[hidden]{display:none}
+    .newsletter-modal{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:18px;background:rgba(29,23,18,.7);direction:rtl}
+    .newsletter-dialog{position:relative;width:min(100%,560px);max-height:calc(100vh - 36px);overflow:auto;padding:clamp(25px,5vw,42px);border:1px solid rgba(184,139,57,.55);border-radius:36px 36px 14px 14px;background:linear-gradient(145deg,#fffdf8,#f2e4cd);box-shadow:0 28px 80px rgba(0,0,0,.34);text-align:center;color:#35291f}
+    .newsletter-close{position:absolute;top:12px;left:14px;width:40px;height:40px;border:0;border-radius:50%;background:#fff;color:#493728;font-size:1.7rem;line-height:1;cursor:pointer}
+    .newsletter-eyebrow{margin:0 0 7px;color:#8b6422;font-weight:700}
+    .newsletter-dialog h2{margin:0 0 12px;font-family:"Frank Ruhl Libre",serif;font-size:clamp(2rem,6vw,3rem);line-height:1.05}
+    .newsletter-dialog>p{margin:0 auto 22px;max-width:440px;line-height:1.7;color:#5b4c3e}
+    .newsletter-form{display:grid;gap:12px;text-align:right}
+    .newsletter-form label{font-weight:700}
+    .newsletter-form input[type="text"],.newsletter-form input[type="email"]{width:100%;box-sizing:border-box;margin-top:5px;padding:13px 14px;border:1px solid #c9aa72;border-radius:12px;background:#fff;font:inherit}
+    .newsletter-consent{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;font-weight:500!important;line-height:1.45}
+    .newsletter-consent input{margin-top:4px}
+    .newsletter-submit{padding:14px 20px;border:0;border-radius:13px;background:#5a4330;color:#fffdf8;font:700 1rem Assistant,sans-serif;cursor:pointer}
+    .newsletter-submit:disabled{opacity:.65;cursor:wait}
+    .newsletter-status{min-height:24px;margin:2px 0 0;text-align:center;font-weight:700}
+    .newsletter-status.ok{color:#27623c}.newsletter-status.error{color:#8a2f2f}
+    body.newsletter-open{overflow:hidden}
+    @media(max-width:520px){.newsletter-dialog{padding:30px 20px 24px;border-radius:26px 26px 12px 12px}.newsletter-dialog h2{padding-inline:20px}}
+  `;
+  document.head.appendChild(styles);
+
+  const modal = document.createElement('div');
+  modal.className = 'newsletter-modal';
+  modal.hidden = true;
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'newsletter-title');
+  modal.innerHTML = `
+    <div class="newsletter-dialog">
+      <button class="newsletter-close" type="button" aria-label="סגירת חלון ההרשמה">×</button>
+      <p class="newsletter-eyebrow">מאמר חדש בכל מוצאי שבת</p>
+      <h2 id="newsletter-title">המאמר השבועי מעולם הסת״ם</h2>
+      <p>הלכה, מסורת וידיעות מעשיות מאת הרב יוחאי אוחיון. הצטרפו למאות הקוראים וקבלו את המאמר ישירות למייל.</p>
+      <form class="newsletter-form">
+        <label>שם <span aria-hidden="true">(לא חובה)</span><input type="text" name="name" autocomplete="name"></label>
+        <label>כתובת מייל<input type="email" name="email" autocomplete="email" required></label>
+        <label class="newsletter-consent"><input type="checkbox" name="consent" value="yes" required><span>אני מאשר לקבל למייל את המאמר השבועי ועדכונים ממכון אמנות הסת״ם.</span></label>
+        <input type="hidden" name="form_type" value="newsletter">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;right:-9999px" aria-hidden="true">
+        <button class="newsletter-submit" type="submit">שלחו לי את המאמר השבועי</button>
+        <p class="newsletter-status" aria-live="polite"></p>
+      </form>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const closeButton = modal.querySelector('.newsletter-close');
+  const form = modal.querySelector('.newsletter-form');
+  const submitButton = modal.querySelector('.newsletter-submit');
+  const status = modal.querySelector('.newsletter-status');
+  let shown = false;
+
+  const close = (remember = true) => {
+    modal.hidden = true;
+    document.body.classList.remove('newsletter-open');
+    if (remember) localStorage.setItem(DISMISSED_KEY, String(Date.now()));
+  };
+  const show = () => {
+    if (shown) return;
+    shown = true;
+    modal.hidden = false;
+    document.body.classList.add('newsletter-open');
+    closeButton.focus();
+    trackEvent('newsletter_popup_view', { page_path: window.location.pathname });
+  };
+
+  closeButton.addEventListener('click', () => close(true));
+  modal.addEventListener('click', event => {
+    if (event.target === modal) close(true);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !modal.hidden) close(true);
+  });
+
+  const timer = window.setTimeout(show, 12000);
+  const onScroll = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollable > 0 && window.scrollY / scrollable >= .25) {
+      window.clearTimeout(timer);
+      window.removeEventListener('scroll', onScroll);
+      show();
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    submitButton.disabled = true;
+    status.className = 'newsletter-status';
+    status.textContent = 'רושם אותך...';
+    try {
+      const response = await fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) });
+      const data = await response.json();
+      if (!response.ok || !data.ok) throw new Error(data.error || 'signup_failed');
+      localStorage.setItem(SUBSCRIBED_KEY, '1');
+      status.classList.add('ok');
+      status.textContent = 'נרשמת בהצלחה — המאמר החדש בדרך אליך.';
+      trackEvent('newsletter_signup', { page_path: window.location.pathname });
+      trackEvent('generate_lead', { form_name: 'newsletter', page_path: window.location.pathname });
+      window.setTimeout(() => close(false), 2600);
+    } catch (error) {
+      status.classList.add('error');
+      status.textContent = 'ההרשמה לא נשלחה. אפשר לנסות שוב בעוד רגע.';
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+})();

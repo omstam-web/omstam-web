@@ -27,10 +27,48 @@ $name = trim(strip_tags($_POST['name'] ?? ''));
 $phone = trim(strip_tags($_POST['phone'] ?? ''));
 $email = trim(strip_tags($_POST['email'] ?? ''));
 $message = trim(strip_tags($_POST['message'] ?? ''));
+$formType = trim(strip_tags($_POST['form_type'] ?? 'contact'));
+$consent = trim(strip_tags($_POST['consent'] ?? ''));
 $campaignFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid'];
 $campaign = [];
 foreach ($campaignFields as $field) {
     $campaign[$field] = trim(strip_tags($_POST[$field] ?? ''));
+}
+
+if ($formType === 'newsletter') {
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        json_out(['ok' => false, 'error' => 'invalid_email'], 422);
+    }
+    if ($consent !== 'yes') {
+        json_out(['ok' => false, 'error' => 'consent_required'], 422);
+    }
+
+    $subscriberName = $name !== '' ? $name : 'ללא שם';
+    $subject = 'הרשמה חדשה למאמר השבועי - ' . $subscriberName;
+    $body = "הרשמה חדשה למאמר השבועי באתר מכון אמנות הסת\"ם\n\n"
+        . "שם: {$subscriberName}\n"
+        . "אימייל: {$email}\n"
+        . "אישור דיוור: כן\n"
+        . "עמוד מקור: " . ($_SERVER['HTTP_REFERER'] ?? '-') . "\n";
+
+    $headers = 'From: ' . OMSTAM_SITE_NAME . ' <' . OMSTAM_FROM_EMAIL . ">\r\n"
+        . 'Reply-To: ' . $email . "\r\n"
+        . 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
+
+    $sent = function_exists('mail') ? @mail(OMSTAM_ADMIN_EMAIL, $subject, $body, $headers) : false;
+
+    @mkdir(__DIR__ . '/private', 0755, true);
+    @file_put_contents(
+        __DIR__ . '/private/newsletter-log.txt',
+        '[' . date('c') . '] sent=' . ($sent ? 'yes' : 'no') . " name={$subscriberName} email={$email} consent=yes\n",
+        FILE_APPEND | LOCK_EX
+    );
+
+    if (!$sent) {
+        json_out(['ok' => false, 'error' => 'mail_failed'], 500);
+    }
+
+    json_out(['ok' => true]);
 }
 
 if ($name === '' || $phone === '') {
