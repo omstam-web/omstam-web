@@ -36,6 +36,9 @@ foreach ($campaignFields as $field) {
 }
 
 if ($formType === 'newsletter') {
+    if ($name === '') {
+        json_out(['ok' => false, 'error' => 'name_required'], 422);
+    }
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         json_out(['ok' => false, 'error' => 'invalid_email'], 422);
     }
@@ -43,7 +46,7 @@ if ($formType === 'newsletter') {
         json_out(['ok' => false, 'error' => 'consent_required'], 422);
     }
 
-    $subscriberName = $name !== '' ? $name : 'ללא שם';
+    $subscriberName = $name;
     $subject = 'הרשמה חדשה למאמר השבועי - ' . $subscriberName;
     $body = "הרשמה חדשה למאמר השבועי באתר מכון אמנות הסת\"ם\n\n"
         . "שם: {$subscriberName}\n"
