@@ -61,17 +61,18 @@ if ($formType === 'newsletter') {
     $sent = function_exists('mail') ? @mail(OMSTAM_ADMIN_EMAIL, $subject, $body, $headers) : false;
 
     @mkdir(__DIR__ . '/private', 0755, true);
-    @file_put_contents(
+    $saved = @file_put_contents(
         __DIR__ . '/private/newsletter-log.txt',
         '[' . date('c') . '] sent=' . ($sent ? 'yes' : 'no') . " name={$subscriberName} email={$email} consent=yes\n",
         FILE_APPEND | LOCK_EX
     );
 
-    if (!$sent) {
-        json_out(['ok' => false, 'error' => 'mail_failed'], 500);
+    // The subscription is valid once it is durably logged. Email is only a notification channel.
+    if ($saved === false && !$sent) {
+        json_out(['ok' => false, 'error' => 'signup_not_saved'], 500);
     }
 
-    json_out(['ok' => true]);
+    json_out(['ok' => true, 'notification_sent' => $sent, 'saved' => $saved !== false]);
 }
 
 if ($name === '' || $phone === '') {
