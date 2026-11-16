@@ -237,7 +237,7 @@ if (contactForm) {
       <h2 id="newsletter-title">המאמר השבועי מעולם הסת״ם</h2>
       <p>הלכה, מסורת וידיעות מעשיות מאת הרב יוחאי אוחיון. הצטרפו למאות הקוראים וקבלו את המאמר ישירות למייל.</p>
       <form class="newsletter-form">
-        <label>שם <span aria-hidden="true">(לא חובה)</span><input type="text" name="name" autocomplete="name"></label>
+        <label>שם מלא<input type="text" name="name" autocomplete="name" required></label>
         <label>כתובת מייל<input type="email" name="email" autocomplete="email" required></label>
         <label class="newsletter-consent"><input type="checkbox" name="consent" value="yes" required><span>אני מאשר לקבל למייל את המאמר השבועי ועדכונים ממכון אמנות הסת״ם.</span></label>
         <input type="hidden" name="form_type" value="newsletter">
